@@ -3,7 +3,7 @@
 // 2. div class = "link" for the links.
 // 3. div id = "schoolLogo" for easy styling of the school's logo.
 // 4. div id = "schoolName" for easy styling of the school's name.
-// 5. Vertical design for more of a slick, professional look.
+// 5. HORIZONTAL design for more of a slick, professional look.
 // 6. Array of objects for links.
 // 7. Links:
 //      - home
@@ -19,7 +19,7 @@
 
 function createNavBar() {
     const navbar = document.createElement('div');
-    navbar.classList.add('navWrapper');
+    navbar.id = 'navWrapper';
 
     return navbar
 }
@@ -42,6 +42,7 @@ function addSchoolName() {
 
 function generateLinkElements(pLinksObjects) {
     const listOfLinks = document.createElement('ul');
+    listOfLinks.id = 'vertical-menu';
     pLinksObjects.forEach(link => {
         // Creates <li> elements for each item of the array of objects.
         const listItem = document.createElement('li');

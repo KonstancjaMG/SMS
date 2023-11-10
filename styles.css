@@ -3,6 +3,50 @@ body {
     margin: 0 auto;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+#navWrapper {
+    height: 60px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#school-logo-container {
+    padding: 0 10px;
+}
+
+#school-name {
+
+}
+
+#vertical-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    padding: 0 10px;
+}
+
+.link-item {
+
+}
+
 /* Adjustments for smaller desktop screens */
 @media screen and (max-width: 1440px) {
 
