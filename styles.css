@@ -27,6 +27,10 @@ a:visited {
     justify-content: space-between;
 }
 
+#logo-and-school-container {
+    display: flex;
+}
+
 #school-logo-container {
     padding: 0 10px;
 }

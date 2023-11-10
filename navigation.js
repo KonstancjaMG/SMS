@@ -40,6 +40,17 @@ function addSchoolName() {
     return textParagraph
 }
 
+function createLogoAndSchoolContainer() {
+    const logo = addLogo();
+    const schoolName = addSchoolName();
+    const logoAndSchoolContainer = document.createElement('div');
+    logoAndSchoolContainer.id = 'logo-and-school-container';
+    logoAndSchoolContainer.appendChild(logo);
+    logoAndSchoolContainer.appendChild(schoolName);
+
+    return logoAndSchoolContainer;
+}
+
 function generateLinkElements(pLinksObjects) {
     const listOfLinks = document.createElement('ul');
     listOfLinks.id = 'vertical-menu';
@@ -61,9 +72,12 @@ function generateLinkElements(pLinksObjects) {
     return listOfLinks
 }
 
+
+
 function renderNav(pParentElement, pLinksObjects) {
     const navbar = createNavBar();
-    navbar.appendChild(addLogo());
+    navbar.appendChild(createLogoAndSchoolContainer());
+    //navbar.appendChild(addLogo());
     //navbar.appendChild(addSchoolName());
     navbar.appendChild(generateLinkElements(pLinksObjects));
 
