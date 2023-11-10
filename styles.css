@@ -1,0 +1,29 @@
+/* Base styles - for desktop screens */
+body {
+    margin: 0 auto;
+}
+
+/* Adjustments for smaller desktop screens */
+@media screen and (max-width: 1440px) {
+
+}
+
+/* Adjustments for medium-sized screens, like smaller laptops */
+@media screen and (max-width: 1280px) {
+
+}
+
+/* Adjustments for small screens like tablets */
+@media screen and (max-width: 1024px) {
+    /* Switching from a horizontal to a vertical layout */
+}
+
+/* Optional: Adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Optional: Adjustments for very small screens */
+@media screen and (max-width: 480px) {
+
+}
