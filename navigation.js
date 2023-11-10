@@ -13,3 +13,17 @@
 //      - grades
 //      - announcements/notes
 //      - login (non-functional)
+
+function createNavBar() {
+    const navbar = document.createElement('div')
+    navbar.classList.add('navWrapper');
+    
+    return navbar
+}
+
+function renderNav(pParentElement) {
+    const navbar = createNavBar();
+    pParentElement.appendChild(navbar)
+}
+
+export {renderNav}
