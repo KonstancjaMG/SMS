@@ -14,16 +14,42 @@
 //      - announcements/notes
 //      - login (non-functional)
 
+// CODE ANALYSIS:
+// 1. Functions addLogo() and addSchoolName() have values inserted directly since they won't be changing a lot of times and don't need a dynamic approach.
+
 function createNavBar() {
-    const navbar = document.createElement('div')
+    const navbar = document.createElement('div');
     navbar.classList.add('navWrapper');
-    
+
     return navbar
+}
+
+function addLogo() {
+    const logoContainer = document.createElement('div');
+    logoContainer.id = 'school-logo-container';
+    const logo = document.createElement('img');
+    logo.setAttribute('src', 'https://placehold.co/120x50');
+    logoContainer.appendChild(logo);
+    return logoContainer
+}
+
+function addSchoolName() {
+    const textParagraph = document.createElement('p');
+    textParagraph.id = 'school-name';
+    textParagraph.textContent = 'Racoon City School District';
+    return textParagraph
+}
+
+function generateLinkElements() {
+
 }
 
 function renderNav(pParentElement) {
     const navbar = createNavBar();
-    pParentElement.appendChild(navbar)
+    navbar.appendChild(addLogo());
+    navbar.appendChild(addSchoolName());
+
+    pParentElement.appendChild(navbar);
 }
 
 export {renderNav}
