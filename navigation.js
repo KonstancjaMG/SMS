@@ -40,7 +40,7 @@ function addSchoolName() {
     return textParagraph
 }
 
-function generateLinkElements() {
+function generateLinkElements(pLinksObjects) {
 
 }
 
