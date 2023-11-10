@@ -41,13 +41,22 @@ function addSchoolName() {
 }
 
 function generateLinkElements(pLinksObjects) {
+    const listOfLinks = document.createElement('ul');
+    pLinksObjects.forEach(link => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('link-item')
 
+        listItem.textContent = link.name;
+        listOfLinks.appendChild(listItem);
+    })
+    return listOfLinks
 }
 
-function renderNav(pParentElement) {
+function renderNav(pParentElement, pLinksObjects) {
     const navbar = createNavBar();
     navbar.appendChild(addLogo());
     navbar.appendChild(addSchoolName());
+    navbar.appendChild(generateLinkElements(pLinksObjects));
 
     pParentElement.appendChild(navbar);
 }

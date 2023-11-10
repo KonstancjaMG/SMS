@@ -1,9 +1,11 @@
 const LINKS = [
-  { name: "Home", src: "/home" },
-  { name: "Students", src: "/students" },
-  { name: "Classes", src: "/classes" },
-  { name: "Teachers", src: "/teachers" },
-  { name: "Grades", src: "/grades" },
+  { name: "Home", url: "/home" },
+  { name: "Students", url: "/students" },
+  { name: "Classes", url: "/classes" },
+  { name: "Teachers", url: "/teachers" },
+  { name: "Grades", url: "/grades" },
+  { name: "Notes", url: "/notes" },
+  { name: "Login", url: "/login" },
 ];
 
 export {LINKS}
