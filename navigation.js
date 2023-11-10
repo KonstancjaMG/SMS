@@ -46,11 +46,14 @@ function generateLinkElements(pLinksObjects) {
     pLinksObjects.forEach(link => {
         // Creates <li> elements for each item of the array of objects.
         const listItem = document.createElement('li');
-        listItem.classList.add('link-item');
+        listItem.classList.add('navbar-link-item');
         // Creates links for each item of the array of objects.
         const anchor = document.createElement('a');
         anchor.setAttribute('href', link.url);
         anchor.textContent = link.name;
+        if(link.status === 'inactive') {
+            anchor.classList.add('inactive-link');
+        }
         // Appends links to each list item and each list item to the parent <ul>.
         listItem.appendChild(anchor);
         listOfLinks.appendChild(listItem);
@@ -61,7 +64,7 @@ function generateLinkElements(pLinksObjects) {
 function renderNav(pParentElement, pLinksObjects) {
     const navbar = createNavBar();
     navbar.appendChild(addLogo());
-    navbar.appendChild(addSchoolName());
+    //navbar.appendChild(addSchoolName());
     navbar.appendChild(generateLinkElements(pLinksObjects));
 
     pParentElement.appendChild(navbar);

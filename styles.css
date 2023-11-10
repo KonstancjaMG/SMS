@@ -43,8 +43,14 @@ a:visited {
     padding: 0 10px;
 }
 
-.link-item {
+.navbar-link-item {
 
+}
+
+.inactive-link {
+    color: grey;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 /* Adjustments for smaller desktop screens */
