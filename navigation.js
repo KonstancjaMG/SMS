@@ -43,10 +43,15 @@ function addSchoolName() {
 function generateLinkElements(pLinksObjects) {
     const listOfLinks = document.createElement('ul');
     pLinksObjects.forEach(link => {
+        // Creates <li> elements for each item of the array of objects.
         const listItem = document.createElement('li');
-        listItem.classList.add('link-item')
-
-        listItem.textContent = link.name;
+        listItem.classList.add('link-item');
+        // Creates links for each item of the array of objects.
+        const anchor = document.createElement('a');
+        anchor.setAttribute('href', link.url);
+        anchor.textContent = link.name;
+        // Appends links to each list item and each list item to the parent <ul>.
+        listItem.appendChild(anchor);
         listOfLinks.appendChild(listItem);
     })
     return listOfLinks
