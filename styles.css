@@ -30,6 +30,12 @@ body {
 
 #school-logo-container {
     padding: 0 10px;
+
+}
+
+#school-logo-container img {
+
+    height: 50px;
 }
 
 #school-name {

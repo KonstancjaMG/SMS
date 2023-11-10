@@ -13,6 +13,7 @@
 //      - grades
 //      - announcements/notes
 //      - login (non-functional)
+// 8. https://placehold.co/120x50
 
 // CODE ANALYSIS:
 // 1. Functions addLogo(), addSchoolName(), and createLogoAndSchoolLink() have values inserted directly since they won't be changing a lot of times and don't need a dynamic approach.
@@ -28,7 +29,7 @@ function addLogo() {
     const logoContainer = document.createElement('div');
     logoContainer.id = 'school-logo-container';
     const logo = document.createElement('img');
-    logo.setAttribute('src', 'https://placehold.co/120x50');
+    logo.setAttribute('src', './images/school_logo.png');
     logoContainer.appendChild(logo);
     return logoContainer
 }
@@ -43,7 +44,7 @@ function addSchoolName() {
 function createLogoAndSchoolLink() {
     const linkWrap = document.createElement('a');
     linkWrap.id = 'school-and-logo-link-wrap'
-    linkWrap.setAttribute('href', '/home.html')
+    linkWrap.setAttribute('href', '/index.html')
     const logo = addLogo();
     const schoolName = addSchoolName();
     const logoAndSchoolContainer = document.createElement('div');
