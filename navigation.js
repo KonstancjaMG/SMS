@@ -37,14 +37,14 @@ function addLogo() {
 function addSchoolName() {
     const textParagraph = document.createElement('p');
     textParagraph.id = 'school-name';
-    textParagraph.textContent = 'Racoon City School District';
+    textParagraph.textContent = 'Raccoon City School District';
     return textParagraph
 }
 
 function createLogoAndSchoolLink() {
     const linkWrap = document.createElement('a');
     linkWrap.id = 'school-and-logo-link-wrap'
-    linkWrap.setAttribute('href', '/index.html')
+    linkWrap.setAttribute('href', '/home.html')
     const logo = addLogo();
     const schoolName = addSchoolName();
     const logoAndSchoolContainer = document.createElement('div');
