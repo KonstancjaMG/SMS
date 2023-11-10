@@ -15,7 +15,7 @@
 //      - login (non-functional)
 
 // CODE ANALYSIS:
-// 1. Functions addLogo() and addSchoolName() have values inserted directly since they won't be changing a lot of times and don't need a dynamic approach.
+// 1. Functions addLogo(), addSchoolName(), and createLogoAndSchoolLink() have values inserted directly since they won't be changing a lot of times and don't need a dynamic approach.
 
 function createNavBar() {
     const navbar = document.createElement('div');
@@ -40,15 +40,19 @@ function addSchoolName() {
     return textParagraph
 }
 
-function createLogoAndSchoolContainer() {
+function createLogoAndSchoolLink() {
+    const linkWrap = document.createElement('a');
+    linkWrap.id = 'school-and-logo-link-wrap'
+    linkWrap.setAttribute('href', '/home.html')
     const logo = addLogo();
     const schoolName = addSchoolName();
     const logoAndSchoolContainer = document.createElement('div');
     logoAndSchoolContainer.id = 'logo-and-school-container';
     logoAndSchoolContainer.appendChild(logo);
     logoAndSchoolContainer.appendChild(schoolName);
+    linkWrap.appendChild(logoAndSchoolContainer);
 
-    return logoAndSchoolContainer;
+    return linkWrap;
 }
 
 function generateLinkElements(pLinksObjects) {
@@ -57,13 +61,15 @@ function generateLinkElements(pLinksObjects) {
     pLinksObjects.forEach(link => {
         // Creates <li> elements for each item of the array of objects.
         const listItem = document.createElement('li');
-        listItem.classList.add('navbar-link-item');
+
         // Creates links for each item of the array of objects.
         const anchor = document.createElement('a');
         anchor.setAttribute('href', link.url);
         anchor.textContent = link.name;
         if(link.status === 'inactive') {
             anchor.classList.add('inactive-link');
+        } else {
+            anchor.classList.add('navbar-link-item');
         }
         // Appends links to each list item and each list item to the parent <ul>.
         listItem.appendChild(anchor);
@@ -76,9 +82,7 @@ function generateLinkElements(pLinksObjects) {
 
 function renderNav(pParentElement, pLinksObjects) {
     const navbar = createNavBar();
-    navbar.appendChild(createLogoAndSchoolContainer());
-    //navbar.appendChild(addLogo());
-    //navbar.appendChild(addSchoolName());
+    navbar.appendChild(createLogoAndSchoolLink());
     navbar.appendChild(generateLinkElements(pLinksObjects));
 
     pParentElement.appendChild(navbar);

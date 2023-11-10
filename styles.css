@@ -3,28 +3,16 @@ body {
     margin: 0 auto;
 }
 
-a {
-    text-decoration: none;
-}
-
-a:active {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
 #navWrapper {
     height: 60px;
     background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#school-and-logo-link-wrap {
+    text-decoration: none;
 }
 
 #logo-and-school-container {
@@ -48,13 +36,15 @@ a:visited {
 }
 
 .navbar-link-item {
-
+    color: red;
+    text-decoration: none;
 }
 
 .inactive-link {
     color: grey;
     cursor: not-allowed;
     pointer-events: none;
+    text-decoration: none;
 }
 
 /* Adjustments for smaller desktop screens */
