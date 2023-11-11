@@ -34,15 +34,15 @@ This project uses vanilla JavaScript without any frameworks or libraries (for no
 ## File Structure
 
 SMS/
-├── css/
-│   └── styles.css # The main stylesheet for the project
-├── images/ # Directory for images used for the project
-├── js/
-│   ├── data.js # Data file, containing constants
-│   ├── main.js # The main JavaScript entry point
-│   ├── navigation.js # Script for navigation-related functionality
-│   ├── render.js # Script for rendering UI components
-│   └── spacer.js # Script to create visual separators
-├── home.html # The main HTML file for the School Management System
-├── package.json # Project metadata and dependency management
-└── README.md # The README file for the project documentation
+* css/
+    * styles.css # The main stylesheet for the project
+* images/ # Directory for images used for the project
+* js/
+    * data.js # Data file, containing constants
+    * main.js # The main JavaScript entry point
+    * navigation.js # Script for navigation-related functionality
+    * render.js # Script for rendering UI components
+    * spacer.js # Script to create visual separators
+* home.html # The main HTML file for the School Management System
+* package.json # Project metadata and dependency management
+* README.md # The README file for the project documentation
