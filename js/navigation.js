@@ -1,23 +1,3 @@
-// Setting up navigation:
-// 1. navbar - wrapper for the navigation.
-// 2. div class = "link" for the links.
-// 3. div id = "schoolLogo" for easy styling of the school's logo.
-// 4. div id = "schoolName" for easy styling of the school's name.
-// 5. HORIZONTAL design for more of a slick, professional look.
-// 6. Array of objects for links.
-// 7. Links:
-//      - home
-//      - students
-//      - classes
-//      - teachers
-//      - grades
-//      - announcements/notes
-//      - login (non-functional)
-// 8. https://placehold.co/120x50
-
-// CODE ANALYSIS:
-// 1. Functions addLogo(), addSchoolName(), and createLogoAndSchoolLink() have values inserted directly since they won't be changing a lot of times and don't need a dynamic approach.
-
 function createNavBar() {
     const navbar = document.createElement('div');
     navbar.id = 'navWrapper';
