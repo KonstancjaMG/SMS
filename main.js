@@ -1,8 +1,6 @@
-import { renderNav } from "./navigation.js"
+import { renderApp } from "./render.js"
 import { LINKS } from "./data.js"
-import { createSeparator } from "./spacer.js"
 
 const MAIN_HTML = document.getElementById("app")
 
-renderNav(MAIN_HTML, LINKS)
-createSeparator(MAIN_HTML)
+renderApp(MAIN_HTML, LINKS);
