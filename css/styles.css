@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* Base styles - for desktop screens */
+body {
+    margin: 0 auto;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------- NAVBAR ------- */
+
+#navWrapper {
+    height: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ------- NAME AND SCHOOL LOGO ------- */
+
+#school-and-logo-link-wrap {
+    text-decoration: none;
+}
+
+#logo-and-school-container {
+    display: flex;
+}
+
+#school-logo-container {
+    padding: 0 10px;
+
+}
+
+#school-logo-container img {
+    height: 50px;
+}
+
+#school-name {
+    color: black;
+    font-size: large;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* ------- MENU ITEMS ------- */
+
+#vertical-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    padding: 0 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.navbar-link-item {
+    color: black;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar-link-item:hover {
+    font-weight: bold;
+    box-shadow: 0 0 8px #ffffff;
+}
+
+.inactive-link {
+    color: grey;
+    cursor: not-allowed;
+    pointer-events: none;
+    text-decoration: none;
+}
+
+/* ------- SEPARATOR ------- */
+
+.separator {
+    height: 5px;
+    background-color: black;
+}
+
+/* Adjustments for smaller desktop screens */
+@media screen and (max-width: 1440px) {
+
+}
+
+/* Adjustments for medium-sized screens, like smaller laptops */
+@media screen and (max-width: 1280px) {
+
+}
+
+/* Adjustments for small screens like tablets */
+@media screen and (max-width: 1024px) {
+    /* Switching from a horizontal to a vertical layout */
+}
+
+/* Optional: Adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Optional: Adjustments for very small screens */
+@media screen and (max-width: 480px) {
+
+}
