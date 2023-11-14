@@ -1,6 +1,6 @@
 import { linksArray } from "./data.js";
 
-const app = document.getElementById("app"); //gets the html element with the of "app"
+const app = document.getElementById("app");
 
 const renderNav = () => {
   app.innerHTML += `<div id="navWrapper">
@@ -15,7 +15,7 @@ const renderNav = () => {
     <ul id="vertical-menu">
     ${linksArray
       .map((link) => `
-    <li><a href="${link.url}" class="navbar-link-item">${link.name}</a></li>`).join(" ")}
+    <li><a href="${link.url}" id="${link.url}Link" class="navbar-link-item">${link.name}</a></li>`).join(" ")}
     </ul>
     </div>
   <div class="separator">
