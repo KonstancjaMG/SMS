@@ -4,8 +4,14 @@ Welcome to the School Management System (SMS), an interactive web application de
 ## Goals:
 - [x] - Creation of navigation structure.
 - [x] - Creation of navigation styles.
-- [ ] - Creation of content structure.
-- [ ] - Creation of content styles.
+- [ ] - Creation of main content structure.
+- [ ] - Creation of main content styles.
+- [ ] - Creation of:
+         * students page
+         * teachers page
+         * classes page
+         * grades page
+         * notes page
 - [ ] - Creation of footer structure.
 - [ ] - Creation of footer styles.
 - [ ] - Adjustements for different viewports.
