@@ -6,13 +6,19 @@ Welcome to the School Management System (SMS), an interactive web application de
 - [x] - Creation of navigation styles.
 - [ ] - Creation of main content structure.
 - [ ] - Creation of main content styles.
-- [ ] - Creation of students page
-- [ ] - Creation of teachers page
-- [ ] - Creation of classes page
-- [ ] - Creation of grades page
-- [ ] - Creation of notes page
+- [ ] - Creation of students page.
+- [ ] - Creation of students styling.
+- [ ] - Creation of teachers page.
+- [ ] - Creation of teachers styling.
+- [ ] - Creation of classes page.
+- [ ] - Creation of classes styling.
+- [ ] - Creation of grades page.
+- [ ] - Creation of grades styling.
+- [ ] - Creation of notes page.
+- [ ] - Creation of notes styling.
 - [ ] - Creation of footer structure.
 - [ ] - Creation of footer styles.
+- [ ] - Add of localStorage.
 - [ ] - Adjustements for different viewports.
 Optional:
 - [ ] - Creation of mobile version of the application.
