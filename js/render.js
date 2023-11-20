@@ -1,9 +1,8 @@
-import { renderNav } from "./navigation.js"
-import { createSeparator } from "./spacer.js"
+import { renderNav } from "./navigation.js";
 
-function renderApp(pParentElement, pLinks) {
-    renderNav(pParentElement, pLinks)
-    createSeparator(pParentElement)
-}
-
-export {renderApp}
+const renderApp = () => {
+    renderNav();
+    // renderContent();
+    // renderFooter();
+  };
+  export { renderApp };
