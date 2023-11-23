@@ -17,7 +17,7 @@ const renderNav = () => {
       <div class="navbar-nav ms-auto">
           ${linksArray.map(link => `
               <li class="nav-item">
-                  <button id="${link.url}" class="btn btn-link custom-button">${link.name}</button>
+                  <button id="${link.url}" class="btn btn-link custom-button ${link.status}">${link.name}</button>
               </li>
           `).join("")}
       </div>
