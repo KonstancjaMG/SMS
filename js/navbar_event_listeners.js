@@ -22,6 +22,12 @@ const createEventListeners = () =>
         if (link.url === 'teachers') {renderTeachers();}
         if (link.url === 'grades') {renderGrades();}
         if (link.url === 'notes') {renderNotes();}
+
+        const navbarMenu = document.getElementById('navbarNavAltMarkup');
+        if (navbarMenu.classList.contains('show')) {
+          const navbarToggler = document.querySelector('.navbar-toggler');
+          navbarToggler.click();
+        }
         console.log(`Button for ${link.name} clicked.`);
       });
     }
