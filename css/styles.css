@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-/* Base styles - for desktop screens */
 body {
     margin: 0 auto;
     padding: 0;
@@ -27,7 +26,7 @@ body {
 }
 
 .navbar {
-    justify-content: space-between; /* This separates the brand and nav to each end */
+    justify-content: space-between;
 }
 
 /* ------- NAME AND SCHOOL LOGO ------- */
