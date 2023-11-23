@@ -1,13 +1,27 @@
 import { linksArray } from "./data.js";
+import { renderStudents } from "./content/students.js";
+import { renderClasses } from "./content/classes.js";
+import { renderTeachers } from "./content/teachers.js";
+import { renderGrades } from "./content/grades.js";
+import { renderNotes } from "./content/notes.js";
+
+const clearContent = () => {
+    const contentContainer = document.getElementById('content-container');
+    contentContainer.innerHTML = '';
+};
 
 const createEventListeners = () =>
   linksArray.forEach((link) => {
     let linkID = document.getElementById(link.url);
-    console.log(linkID);
 
     if (linkID) {
       linkID.addEventListener("click", () => {
-        
+        clearContent();
+        if (link.url === 'students') {renderStudents();}
+        if (link.url === 'classes') {renderClasses();}
+        if (link.url === 'teachers') {renderTeachers();}
+        if (link.url === 'grades') {renderGrades();}
+        if (link.url === 'notes') {renderNotes();}
         console.log(`Button for ${link.name} clicked.`);
       });
     }

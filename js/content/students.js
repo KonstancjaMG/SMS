@@ -1,4 +1,7 @@
-const renderNav = () => {
-    app.innerHTML += `<div>STUDENTS</div>
+const renderStudents = () => {
+    const contentContainer = document.getElementById('content-container');
+    contentContainer.innerHTML += `<div>STUDENTS</div>
   `;
   };
+
+  export {renderStudents};
