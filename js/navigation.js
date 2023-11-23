@@ -3,24 +3,22 @@ import { linksArray } from "./data.js";
 const app = document.getElementById("app");
 
 const renderNav = () => {
-  app.innerHTML += `<div id="navWrapper">
-    <a id="school-and-logo-link-wrap" href="/home.html">
-    <div id="logo-and-school-container">
-        <div id="school-logo-container">
-          <img src="./images/school_logo.png" />
-        </div>
-        <p id="school-name">Raccoon City School District</p>
-      </div>
-    </a>
-    <ul id="vertical-menu">
-    ${linksArray
-      .map((link) => `
-    <li><button id="${link.url}Link" class="btn btn-link navbar-link-item">${link.name}</button></li>`).join(" ")}
-    </ul>
-    </div>
-  <div class="separator">
-  </div>`;
+  app.innerHTML += `<nav class="navbar navbar-expand-sm navbar-light bg-light custom-navbar">
+  <div id="name-logo-wrapper">
+  <a class="navbar-brand" href="/home.html">
+      <img src="./images/school_logo.png" alt="School Logo" />
+      Raccoon City School District
+  </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          ${linksArray.map((link) => `<li class="nav-item"><button id="${link.url}" class="custom-button">${link.name}</button></li>`).join("")}
+          </div>
+          </div>
+      </nav>`;
 };
 
-export {renderNav}
-
+export { renderNav };
