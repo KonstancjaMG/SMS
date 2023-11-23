@@ -1,7 +1,9 @@
-function createSeparator(pParentElement) {
+const app = document.getElementById("app");
+
+function createSeparator() {
     const separator = document.createElement('div');
     separator.classList.add('separator');
-    pParentElement.appendChild(separator);
+    app.appendChild(separator);
 }
 
 export {createSeparator}

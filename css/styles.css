@@ -20,6 +20,16 @@ body {
     height: 60px;
 }
 
+.navbar-brand,
+.navbar-nav {
+    align-items: center;
+    display: flex;
+}
+
+.navbar {
+    justify-content: space-between; /* This separates the brand and nav to each end */
+}
+
 /* ------- NAME AND SCHOOL LOGO ------- */
 
 #name-logo-wrapper {
@@ -31,16 +41,23 @@ body {
 }
 
 #name-logo-wrapper img {
-    height: 50px;
+    max-height: 50px;
+    width: auto;
+    margin-right: 15px;
+    margin-left: 5px;
 }
 
 /* ------- MENU ITEMS ------- */
 
 .custom-button {
     width: 100px;
-    height: 50px;
+    height: 100%;
     font-family: 'Quicksand', sans-serif;
     border: none;
+}
+
+.nav-item:hover {
+ background-color: aqua;
 }
 
 /* ------- SEPARATOR ------- */
@@ -50,27 +67,14 @@ body {
     background-color: black;
 }
 
-/* Adjustments for smaller desktop screens */
-@media screen and (max-width: 1440px) {
-
-}
-
-/* Adjustments for medium-sized screens, like smaller laptops */
-@media screen and (max-width: 1280px) {
-
-}
-
-/* Adjustments for small screens like tablets */
-@media screen and (max-width: 1024px) {
-    /* Switching from a horizontal to a vertical layout */
-}
-
-/* Optional: Adjustments for mobile screens */
-@media screen and (max-width: 768px) {
-
-}
-
-/* Optional: Adjustments for very small screens */
-@media screen and (max-width: 480px) {
-
+@media (max-width: 992px) {
+    .navbar-expand-lg .nav-item {
+        border-bottom: 1px solid rgb(150, 149, 149);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .navbar-expand-lg .nav-item .custom-button {
+        padding: .5rem 1rem;
+    }
 }
