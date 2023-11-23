@@ -15,7 +15,7 @@ const renderNav = () => {
     <ul id="vertical-menu">
     ${linksArray
       .map((link) => `
-    <li><a href="${link.url}" id="${link.url}Link" class="navbar-link-item">${link.name}</a></li>`).join(" ")}
+    <li><button id="${link.url}Link" class="btn btn-link navbar-link-item">${link.name}</button></li>`).join(" ")}
     </ul>
     </div>
   <div class="separator">
