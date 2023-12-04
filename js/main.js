@@ -1,3 +1,7 @@
 import { renderApp } from "./render.js";
+import { createEventListeners } from "./navbar_event_listeners.js";
 
-renderApp();
+document.addEventListener('DOMContentLoaded', () => {
+  renderApp();
+  createEventListeners();
+});
