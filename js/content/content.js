@@ -21,9 +21,9 @@ function createCards(pLinks) {
       return `
         <div class="col-md-6 mb-4">
           <div class="card">
-            <div class="card-header">${link.name}</div>
-            <div class="card-body">Card content for ${link.name} goes here.</div>
-            <div class="card-footer">Manage</div>
+            <div class="card-header fw-bold">${link.name}</div>
+            <div class="card-body">${link.name}: </div>
+            <div id="manage${link.name}" class="card-footer">Manage</div>
           </div>
         </div>
       `;
