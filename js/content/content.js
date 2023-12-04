@@ -4,7 +4,7 @@ const renderContent = () => {
   const contentContainer = document.createElement("div");
   contentContainer.id = "content-container";
   contentContainer.innerHTML += `<div>CONTENT</div>`;
-  app.appendChild(contentContainer);
+  app.innerHTML += contentContainer;
 };
 
 export { renderContent };

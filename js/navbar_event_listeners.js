@@ -28,7 +28,6 @@ const createEventListeners = () =>
           const navbarToggler = document.querySelector('.navbar-toggler');
           navbarToggler.click();
         }
-        console.log(`Button for ${link.name} clicked.`);
       });
     }
   });
