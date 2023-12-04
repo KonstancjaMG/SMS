@@ -1,5 +1,5 @@
 # School-Management-System
-Welcome to the School Management System (SMS), an interactive web application designed to manage and display information for the Racoon City School District. This project utilizes HTML, CSS, and vanilla JavaScript to present a user-friendly interface for managing students, classes, teachers, and grades.
+Welcome to the School Management System (SMS), an interactive web application designed to manage and display information for the Racoon City School District. This project utilizes HTML, CSS, Bootstrap and vanilla JavaScript to present a user-friendly interface for managing students, classes, teachers, and grades.
 
 ## Goals:
 - [x] - Creation of navigation structure.
@@ -28,11 +28,11 @@ Optional:
 * Elegant Design with Custom Separator
 * Dynamically Rendered Menu Items
 * Localized Font Import from Google Fonts
+* Utilization of Bootstrap framework
 
 ## Development - Navbar
-This project uses vanilla JavaScript without any frameworks or libraries (for now). Styles are pre-compiled using CSS.
+This project uses JavaScript with the Bootstrap framework.
 
-* Functions addLogo(), addSchoolName(), and createLogoAndSchoolLink() have values (id, textContent, and the image) inserted directly since they won't be changing a lot of times and don't need a dynamic approach.
 * The navigation bar dynamically creates the following links based on the array of objects in data.js - LINKS:
     * students,
     * classes,
@@ -41,6 +41,7 @@ This project uses vanilla JavaScript without any frameworks or libraries (for no
     * notes,
     * login (non-functional).
 * The logo and the name of the school are a link to /home.html.
+* Menu collapses on screens smaller than lg (992px) in order to keep the slick design while providing an easily readable and accessible UI.
 
 ## File Structure
 
