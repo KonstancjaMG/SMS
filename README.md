@@ -1,6 +1,8 @@
 # School-Management-System
 Welcome to the School Management System (SMS), an interactive web application designed to manage and display information for the Racoon City School District. This project utilizes HTML, CSS, Bootstrap and vanilla JavaScript to present a user-friendly interface for managing students, classes, teachers, and grades.
 
+https://konstancjamg-sms.netlify.app/
+
 ## Goals:
 - [x] - Creation of navigation structure.
 - [x] - Creation of navigation styles.
