@@ -1,16 +1,12 @@
-import { linksArray } from "./data.js";
-import { renderStudents } from "./content/students.js";
-import { renderClasses } from "./content/classes.js";
-import { renderTeachers } from "./content/teachers.js";
-import { renderGrades } from "./content/grades.js";
-import { renderNotes } from "./content/notes.js";
+import { linksArray } from "../data.js";
+import { renderStudents } from "../content/students.js";
+import { renderClasses } from "../content/classes.js";
+import { renderTeachers } from "../content/teachers.js";
+import { renderGrades } from "../content/grades.js";
+import { renderNotes } from "../content/notes.js";
+import { clearContent } from "../utils/clear_content.js";
 
-const clearContent = () => {
-  const contentContainer = document.getElementById('contentWrapper');
-  contentContainer.innerHTML = '';
-};
-
-const createEventListeners = () =>
+const createNavEventListeners = () =>
   linksArray.forEach((link) => {
     let linkID = document.getElementById(link.url);
 
@@ -32,4 +28,4 @@ const createEventListeners = () =>
     }
   });
 
-export { createEventListeners };
+export { createNavEventListeners };
