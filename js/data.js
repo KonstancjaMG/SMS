@@ -61,5 +61,24 @@ const grades = [
   { studentId: 10, Math: 5, English: 3, Physics: 4, Chemistry: 4, History: 3 }
 ];
 
+const notes = [
+  {
+    "date": "December 5, 2023",
+    "subject": "Student Progress",
+    "note": "Emily has shown remarkable improvement in her algebra skills. Her latest test score was 85%, a significant increase from her previous score of 65%. Recommended action: Praise her progress and encourage continued practice."
+  },
+  {
+    "date": "December 5, 2023",
+    "subject": "Winter Break Schedule",
+    "note": "Reminder to all staff - the school will be closed for winter break from December 20, 2023, to January 3, 2024. Please ensure all lesson plans are updated accordingly and all grades are submitted by December 18, 2023."
+  },
+  {
+    "date": "December 5, 2023",
+    "subject": "Meeting Preparation",
+    "note": "Prepare progress reports and talking points for the upcoming parent-teacher meetings on December 10, 2023. Focus on discussing strategies for student engagement and individualized learning plans."
+  }
+]
 
-export {linksArray, students, classes, teachers, grades}
+
+
+export {linksArray, students, classes, teachers, grades, notes}
