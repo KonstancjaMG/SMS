@@ -6,7 +6,7 @@ import { renderGrades } from "./content/grades.js";
 import { renderNotes } from "./content/notes.js";
 
 const clearContent = () => {
-    const contentContainer = document.getElementById('content-container');
+    const contentContainer = document.getElementById('content-wrapper');
     contentContainer.innerHTML = '';
 };
 
