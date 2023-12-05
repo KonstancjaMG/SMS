@@ -1,5 +1,5 @@
 const renderStudents = () => {
-    const contentContainer = document.getElementById('content-container');
+    const contentContainer = document.getElementById('contentWrapper');
     contentContainer.innerHTML += `<div>STUDENTS</div>
   `;
   };
