@@ -141,6 +141,20 @@ body {
     text-shadow: 0px 0px 4px #000000;   
 }
 
+#filterColumn {
+    position: fixed;
+    width: 25%;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  #cardsColumn {
+    margin-left: 25%;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+  }
+
+
 /* ------- SCREENS SMALLER THAN 430 PX ------- */
 
 @media (max-width: 429px) {
