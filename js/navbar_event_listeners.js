@@ -6,8 +6,8 @@ import { renderGrades } from "./content/grades.js";
 import { renderNotes } from "./content/notes.js";
 
 const clearContent = () => {
-    const contentContainer = document.getElementById('content-wrapper');
-    contentContainer.innerHTML = '';
+  const contentContainer = document.getElementById('contentWrapper');
+  contentContainer.innerHTML = '';
 };
 
 const createEventListeners = () =>
