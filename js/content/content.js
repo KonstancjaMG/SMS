@@ -1,4 +1,5 @@
-import { linksArray, students, classes, teachers, grades} from "../data.js";
+import { linksArray} from "../data.js";
+import {loadFromLocalStorage} from "../local_storage/local_storage_upload.js"
 
 const app = document.getElementById("app");
 
@@ -35,6 +36,11 @@ function createCards(pLinks) {
 }
 
 function showNumberOf() {
+  const students = loadFromLocalStorage('students');
+  const classes = loadFromLocalStorage('classes');
+  const teachers = loadFromLocalStorage('teachers');
+  const grades = loadFromLocalStorage('grades');
+
   const studentsCard = document.getElementById('numberOfStudents');
   const classesCard = document.getElementById('numberOfClasses');
   const teachersCard = document.getElementById('numberOfTeachers');

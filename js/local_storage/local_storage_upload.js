@@ -18,12 +18,12 @@ function initializeLocalStorage() {
       }
   }
   
-  export function loadFromLocalStorage(key) {
+function loadFromLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
   }
   
-  export function saveToLocalStorage(key, data) {
+ function saveToLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
   }
   
-  export {initializeLocalStorage}
+  export {initializeLocalStorage, loadFromLocalStorage, saveToLocalStorage}
