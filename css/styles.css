@@ -78,6 +78,11 @@ body {
 /* ------- COLLAPSIBLE MENU ------- */
 
 @media (max-width: 992px) {
+
+    body {
+        overflow-y:scroll;
+    }
+
     .navbar-toggler {
         margin-right: 10px;
     }
@@ -128,6 +133,11 @@ body {
 /* ------- SCREENS SMALLER THAN 430 PX ------- */
 
 @media (max-width: 429px) {
+
+    body {
+        overflow-y:scroll;
+    }
+
     #name-logo-wrapper img {
         max-height: 40px;
         margin-right: 10px;
