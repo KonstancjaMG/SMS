@@ -1,4 +1,4 @@
-import { loadFromLocalStorage } from "../local_storage/local_storage_upload.js";
+import { loadFromLocalStorage, saveToLocalStorage } from "../local_storage/local_storage_upload.js";
 import { createStudentCards } from "../content/students.js";
 
 function searchStudentsByName() {
@@ -129,8 +129,41 @@ function handleRemove() {
     })
 }
 
-function handleAdd() {
+function addStudent() {
+    const addBtn = document.getElementById('add-btn');
+    const addName = document.getElementById('students-add-name');
+    const addSurname = document.getElementById('students-add-surname');
+    const addClass = document.getElementById('students-add-class');
+    const addDob = document.getElementById('students-add-dob');
+    const addPlace = document.getElementById('students-add-place');
+    const addContact = document.getElementById('students-add-contact');
 
+    addBtn.addEventListener('click', function() {
+        const nameRegex = /^[a-zA-Z ]+$/;
+        const surnameRegex = /^[A-Za-z]+([- ][A-Za-z]+)*$/
+        const classRegex = /^[a-zA-Z0-9]+$/;
+        const dobRegex = /^\d{4}-\d{2}-\d{2}$/;
+        const placeRegex = /^[a-zA-Z0-9,.\s]+$/;
+        const contactRegex = /^\d{3}-\d{4}$/;
+    
+        const isNameValid = nameRegex.test(addName.value);
+        const isSurnameValid = surnameRegex.test(addSurname.value);
+        const isClassValid = classRegex.test(addClass.value);
+        const isDobValid = dobRegex.test(addDob.value);
+        const isPlaceValid = placeRegex.test(addPlace.value);
+        const isContactValid = contactRegex.test(addContact.value);
+    
+        if (isNameValid && isSurnameValid && isClassValid && isDobValid && isPlaceValid && isContactValid) {
+            console.log('All fields are filled and valid');
+        } else {
+            if (!isNameValid) console.log('Name is not valid');
+            if (!isSurnameValid) console.log('Surname is not valid');
+            if (!isClassValid) console.log('Class is not valid');
+            if (!isDobValid) console.log('DoB is not valid');
+            if (!isPlaceValid) console.log('Place is not valid');
+        }
+    });
+    
 }
 
 function createStudentsEventListeners() {
@@ -140,6 +173,7 @@ function createStudentsEventListeners() {
     searchStudentsByClass();
     searchStudentsByPlace();
     searchStudentsByContactNr();
+    addStudent();
 }
 
 export { createStudentsEventListeners }

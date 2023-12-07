@@ -9,5 +9,4 @@ document.addEventListener('DOMContentLoaded', () => {
   renderApp();
   createNavEventListeners();
   createContentEventListeners();
-
 });

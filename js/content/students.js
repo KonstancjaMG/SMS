@@ -64,10 +64,6 @@ function createStudentCards(pStudentsArray) {
                 <span>${student.address}</span>
               </p>
               <p class="d-flex justify-content-between align-items-center">
-                <span>Parents: </span>
-                <span>${student.parentsNames}</span>
-              </p>
-              <p class="d-flex justify-content-between align-items-center">
                 <span>Contact: </span>
                 <span>${student.parentsContact}</span>
               </p>
@@ -96,20 +92,17 @@ function createAddCard() {
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center fw-bold">
               <span><input type="text" class="form-control custom-add" id="students-add-name" placeholder="Name"></span>
-              <span class=""><input type="text" class="form-control custom-add" id="students-search-class" placeholder="Class"></span>
+              <span class="ms-2"><input type="text" class="form-control custom-add" id="students-add-surname" placeholder="Surname"></span>
+              <span class="ms-5"><input type="text" class="form-control custom-add" id="students-add-class" placeholder="Class"></span>
             </div>        
             <div class="card-body text-start">
               <p class="d-flex justify-content-between align-items-center">
                 <span>Date of Birth: </span>
-                <span><input type="text" class="form-control custom-add" id="students-add-dob" placeholder="Date of Birth"></span>
+                <span><input type="text" class="form-control custom-add" id="students-add-dob" placeholder="YYYY-MM-DD"></span>
               </p>
               <p class="d-flex justify-content-between align-items-center">
                 <span>Address: </span>
                 <span><input type="text" class="form-control custom-add" id="students-add-place" placeholder="Street & City"></span>
-              </p>
-              <p class="d-flex justify-content-between align-items-center">
-                <span>Parents: </span>
-                <span><input type="text" class="form-control custom-add" id="students-add-parents" placeholder="Parents"></span>
               </p>
               <p class="d-flex justify-content-between align-items-center">
                 <span>Contact: </span>
@@ -119,7 +112,7 @@ function createAddCard() {
             <div class="card-footer text-end">
             <div class="row">
             <div class="col">
-              <button type="button" id="edit-btn" class="btn btn-light w-100"><i class="fa-solid fa-plus"></i></button>
+              <button type="button" id="add-btn" class="btn btn-light w-100"><i class="fa-solid fa-plus"></i></button>
             </div>
           </div>
             </div>
