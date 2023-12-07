@@ -150,7 +150,7 @@ body {
 /* ------- STUDENTS ------- */
 
   #cardsColumn {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 220px);
     overflow-y: scroll;
   }
 
