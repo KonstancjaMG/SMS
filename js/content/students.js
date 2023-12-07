@@ -4,10 +4,10 @@ import { createStudentsEventListeners } from "../event_listeners/students_event_
 function createStudentsContent() {
   const contentContainer = document.getElementById('contentWrapper');
   contentContainer.innerHTML = `
-      <div class="container" id="search-bar-container">
+      <div class="" id="search-bar-container">
       ${createSearchBar()}
       </div>
-      <div class="container" id="cardsColumn">
+      <div id="cardsColumn">
         ${createStudentCards(students)}
       </div>
   `;
