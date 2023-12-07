@@ -4,10 +4,10 @@ import { createStudentsEventListeners } from "../event_listeners/students_event_
 function createStudentsContent() {
   const contentContainer = document.getElementById('contentWrapper');
   contentContainer.innerHTML = `
-      <div class="" id="search-bar-container">
+      <div class="container" id="search-bar-container">
       ${createSearchBar()}
       </div>
-      <div id="cardsColumn">
+      <div class="ps-5 pe-5" id="cardsColumn">
         ${createStudentCards(students)}
       </div>
   `;
@@ -16,25 +16,26 @@ function createStudentsContent() {
 function createSearchBar() {
   return `
   <div class="container mb-3 mt-5">
-  <div class="row g-3">
-      <div class="col-md-4">
+  <label for="first-row" class="form-label fs-5">Search</label>
+  <div id="first-row" class="row g-3 d-flex justify-content-center">
+      <div class="col-md-4 col-sm-4">
           <input type="text" class="form-control" id="students-search-name" placeholder="Name">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-4">
           <input type="text" class="form-control" id="students-search-surname" placeholder="Surname">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-4">
           <input type="text" class="form-control" id="students-search-dob" placeholder="Date of Birth">
       </div>
   </div>
-  <div class="row g-3 mt-1">
-      <div class="col-md-4">
+  <div class="row g-3 mt-1 d-flex justify-content-center">
+      <div class="col-md-4 col-sm-4">
           <input type="text" class="form-control" id="students-search-class" placeholder="Class">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-4">
           <input type="text" class="form-control" id="students-search-place" placeholder="Street & City">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-4">
           <input type="text" class="form-control" id="students-search-contact" placeholder="Contact Nr.">
       </div>
   </div>

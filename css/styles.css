@@ -149,7 +149,7 @@ body {
 
 /* ------- SCREENS SMALLER THAN 430 PX ------- */
 
-@media (max-width: 429px) {
+@media (max-width: 580px) {
 
     body {
         overflow-y:scroll;
