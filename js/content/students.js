@@ -15,10 +15,31 @@ function createStudentsContent() {
 
 function createSearchBar() {
   return `
-  <div class="input-group mb-3 mt-5" id="search-bar">
-  <input type="text" class="form-control" id="students-search" placeholder="Search...">
-  <span class="input-group-text" id="basic-addon1"></span>
+  <div class="container mb-3 mt-5">
+  <div class="row g-3">
+      <div class="col-md-4">
+          <input type="text" class="form-control" id="students-search-name" placeholder="Name">
+      </div>
+      <div class="col-md-4">
+          <input type="text" class="form-control" id="students-search-surname" placeholder="Surname">
+      </div>
+      <div class="col-md-4">
+          <input type="text" class="form-control" id="students-search-dob" placeholder="Date of Birth">
+      </div>
+  </div>
+  <div class="row g-3 mt-1">
+      <div class="col-md-4">
+          <input type="text" class="form-control" id="students-search-class" placeholder="Class">
+      </div>
+      <div class="col-md-4">
+          <input type="text" class="form-control" id="students-search-place" placeholder="Street & City">
+      </div>
+      <div class="col-md-4">
+          <input type="text" class="form-control" id="students-search-contact" placeholder="Contact Nr.">
+      </div>
+  </div>
 </div>
+
   `
 }
 
