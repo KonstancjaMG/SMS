@@ -11,6 +11,7 @@ function createStudentsContent(pArray) {
       </div>
       ${createSeparatorGrey()}
       <div class="ps-5 pe-5" id="cardsColumn">
+      <div id="add-status" class="mt-4 text-center" style="display:none"></div>
         ${createStudentCards(pArray)}
       </div>
   `;
@@ -18,7 +19,7 @@ function createStudentsContent(pArray) {
 
 function createSearchBar() {
   return `
-  <div class="container mb-3 mt-4 mb-4">
+  <div class="container mb-3 mt-4 mb-2">
   <div id="first-row" class="row g-3 d-flex justify-content-center">
       <div class="col-md-4 col-sm-4">
           <input type="text" class="form-control" id="students-search-name" placeholder="Name">
@@ -50,7 +51,7 @@ function createStudentCards(pStudentsArray) {
   const cards = pStudentsArray.map(student => {
       return `
         <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
-          <div class="card">
+          <div class="card custom-student-card">
             <div class="card-header d-flex justify-content-between align-items-center fw-bold">
               <span>${student.name} ${student.surname}</span>
               <span class="text-end">Class: ${student.class}</span>
@@ -75,7 +76,7 @@ function createStudentCards(pStudentsArray) {
               <button type="button" id="edit-btn" class="btn btn-light w-100"><i class="fa-solid fa-pen"></i></button>
             </div>
             <div class="col">
-              <button type="button" id="remove-btn" class="btn btn-light w-100"><i class="fa-solid fa-trash"></i></button>
+              <button type="button" class="btn btn-light w-100 remove-btn" data-student-id="${student.id}"><i class="fa-solid fa-trash"></i></button>
             </div>
           </div>
             </div>
@@ -84,7 +85,7 @@ function createStudentCards(pStudentsArray) {
       `;
     }).join('');
   
-  return `<div class="row mb-5 mt-5">${createAddCard()} ${cards}</div>`;
+  return `<div class="row mb-5 mt-4">${createAddCard()} ${cards}</div>`;
 }
 
 function createAddCard() {

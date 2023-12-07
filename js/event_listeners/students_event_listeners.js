@@ -123,10 +123,24 @@ function handleEdit() {
 }
 
 function handleRemove() {
-    const removeBtn = document.getElementById('remove-btn');
-    removeBtn.addEventListener('click', function () {
+    const cardsContainer = document.getElementById('cardsColumn');
 
-    })
+    cardsContainer.addEventListener('click', function (event) {
+        if (event.target.classList.contains('remove-btn')) {
+            const studentId = event.target.getAttribute('data-student-id');
+            const studentCard = document.querySelector(`[data-student-id="${studentId}"]`);
+            studentCard.remove();
+
+            removeStudentFromLocalStorage(studentId);
+            renderStudents()
+        }
+    });
+}
+
+function removeStudentFromLocalStorage(studentId) {
+    let studentsArray = JSON.parse(localStorage.getItem('students')) || [];
+    studentsArray = studentsArray.filter(student => student.id.toString() !== studentId);
+    localStorage.setItem('students', JSON.stringify(studentsArray));
 }
 
 function addStudent() {
@@ -154,7 +168,6 @@ function addStudent() {
         const isContactValid = contactRegex.test(addContact.value);
     
         if (isNameValid && isSurnameValid && isClassValid && isDobValid && isPlaceValid && isContactValid) {
-            console.log('All fields are filled and valid');
             let studentsArray = JSON.parse(localStorage.getItem('students')) || [];
             const nextId = studentsArray.length > 0 ? Math.max(...studentsArray.map(student => student.id)) + 1 : 1;
             const newStudent = {
@@ -170,14 +183,33 @@ function addStudent() {
             studentsArray.push(newStudent);
             saveToLocalStorage('students', studentsArray);
             renderStudents()
+            const addSuccess = document.getElementById('add-status');
+            addSuccess.classList.add('text-success')
+            addSuccess.style.display = 'block';
+            addSuccess.innerHTML = 'Student added successfully!'
 
         } else {
-            if (!isNameValid) console.log('Name is not valid');
-            if (!isSurnameValid) console.log('Surname is not valid');
-            if (!isClassValid) console.log('Class is not valid');
-            if (!isDobValid) console.log('DoB is not valid');
-            if (!isPlaceValid) console.log('Place is not valid');
-            if (!isContactValid) console.log('Contact is not valid');
+            const addError = document.getElementById('add-status');
+            addError.classList.add('text-danger')
+            addError.style.display = 'block';
+            if (!isNameValid) {
+                addError.innerHTML = 'Provided name is invalid!'
+            }
+            if (!isSurnameValid){
+                addError.innerHTML = 'Provided surname is invalid!'
+            }
+            if (!isClassValid) {
+                addError.innerHTML = 'Provided class is invalid!'
+            }
+            if (!isDobValid) {
+                addError.innerHTML = 'Provided date of birth is invalid!'
+            }
+            if (!isPlaceValid) {
+                addError.innerHTML = 'Provided address is invalid!'
+            }
+            if (!isContactValid) {
+                addError.innerHTML = 'Provided number is invalid!'
+            }
         }
     });  
 }
@@ -190,6 +222,7 @@ function createStudentsEventListeners() {
     searchStudentsByPlace();
     searchStudentsByContactNr();
     addStudent();
+    handleRemove()
 }
 
 export { createStudentsEventListeners }

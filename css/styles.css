@@ -155,11 +155,15 @@ body {
   }
 
   .custom-add {
-    height: 24px;
+    height: 29px;
   }
 
   #students-add-class {
     height: 40px;
+  }
+
+  .custom-student-card {
+    height: 280px;
   }
 
 /* ------- SCREENS SMALLER THAN 430 PX ------- */
