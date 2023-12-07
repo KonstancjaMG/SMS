@@ -161,6 +161,7 @@ function addStudent() {
             if (!isClassValid) console.log('Class is not valid');
             if (!isDobValid) console.log('DoB is not valid');
             if (!isPlaceValid) console.log('Place is not valid');
+            if (!isContactValid) console.log('Contact is not valid');
         }
     });
     
