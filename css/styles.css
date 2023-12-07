@@ -158,6 +158,10 @@ body {
     height: 24px;
   }
 
+  #students-add-class {
+    height: 40px;
+  }
+
 /* ------- SCREENS SMALLER THAN 430 PX ------- */
 
 @media (max-width: 580px) {

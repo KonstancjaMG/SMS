@@ -1,5 +1,5 @@
 import { loadFromLocalStorage, saveToLocalStorage } from "../local_storage/local_storage_upload.js";
-import { createStudentCards } from "../content/students.js";
+import { createStudentCards, renderStudents } from "../content/students.js";
 
 function searchStudentsByName() {
     const searchInput = document.getElementById('students-search-name');
@@ -155,6 +155,22 @@ function addStudent() {
     
         if (isNameValid && isSurnameValid && isClassValid && isDobValid && isPlaceValid && isContactValid) {
             console.log('All fields are filled and valid');
+            let studentsArray = JSON.parse(localStorage.getItem('students')) || [];
+            const nextId = studentsArray.length > 0 ? Math.max(...studentsArray.map(student => student.id)) + 1 : 1;
+            const newStudent = {
+                id: nextId,
+                name: addName.value,
+                surname: addSurname.value,
+                class: addClass.value,
+                dateOfBirth: addDob.value,
+                address: addPlace.value,
+                parentsContact: addContact.value
+            };
+
+            studentsArray.push(newStudent);
+            saveToLocalStorage('students', studentsArray);
+            renderStudents()
+
         } else {
             if (!isNameValid) console.log('Name is not valid');
             if (!isSurnameValid) console.log('Surname is not valid');
@@ -163,8 +179,7 @@ function addStudent() {
             if (!isPlaceValid) console.log('Place is not valid');
             if (!isContactValid) console.log('Contact is not valid');
         }
-    });
-    
+    });  
 }
 
 function createStudentsEventListeners() {

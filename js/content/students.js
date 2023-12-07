@@ -1,8 +1,9 @@
+import { loadFromLocalStorage } from "../local_storage/local_storage_upload.js";
 import { students } from "../data.js";
 import { createStudentsEventListeners } from "../event_listeners/students_event_listeners.js";
 import {createSeparatorGrey} from '../utils/spacer.js'
 
-function createStudentsContent() {
+function createStudentsContent(pArray) {
   const contentContainer = document.getElementById('contentWrapper');
   contentContainer.innerHTML = `
       <div class="container" id="search-bar-container">
@@ -10,7 +11,7 @@ function createStudentsContent() {
       </div>
       ${createSeparatorGrey()}
       <div class="ps-5 pe-5" id="cardsColumn">
-        ${createStudentCards(students)}
+        ${createStudentCards(pArray)}
       </div>
   `;
 }
@@ -87,13 +88,21 @@ function createStudentCards(pStudentsArray) {
 }
 
 function createAddCard() {
-      return `
-        <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
+
+  const classesArray = JSON.parse(localStorage.getItem('classes')) || [];
+  const classOptions = classesArray.map(cls => `<option value="${cls.id}">${cls.id}</option>`).join('');
+      
+  return `
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4" id="add-container">
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center fw-bold">
               <span><input type="text" class="form-control custom-add" id="students-add-name" placeholder="Name"></span>
               <span class="ms-2"><input type="text" class="form-control custom-add" id="students-add-surname" placeholder="Surname"></span>
-              <span class="ms-5"><input type="text" class="form-control custom-add" id="students-add-class" placeholder="Class"></span>
+              <span class="ms-5">
+                  <select class="form-control custom-add" id="students-add-class">
+                      ${classOptions}
+                  </select>
+              </span>
             </div>        
             <div class="card-body text-start">
               <p class="d-flex justify-content-between align-items-center">
@@ -102,11 +111,11 @@ function createAddCard() {
               </p>
               <p class="d-flex justify-content-between align-items-center">
                 <span>Address: </span>
-                <span><input type="text" class="form-control custom-add" id="students-add-place" placeholder="Street & City"></span>
+                <span><input type="text" class="form-control custom-add" id="students-add-place" placeholder="# Street, City"></span>
               </p>
               <p class="d-flex justify-content-between align-items-center">
                 <span>Contact: </span>
-                <span><input type="text" class="form-control custom-add" id="students-add-contact" placeholder="Contact Nr."></span>
+                <span><input type="text" class="form-control custom-add" id="students-add-contact" placeholder="XXX-XXXX"></span>
               </p>
             </div>
             <div class="card-footer text-end">
@@ -122,7 +131,8 @@ function createAddCard() {
     }
 
 const renderStudents = () => {
-   createStudentsContent()
+  const storedStudents = loadFromLocalStorage('students') || students;
+   createStudentsContent(storedStudents);
    createStudentsEventListeners();
   };
 
