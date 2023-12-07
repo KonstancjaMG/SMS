@@ -9,7 +9,27 @@ function searchStudentsByName() {
         const searchText = searchInput.value.toLowerCase();
 
         const filteredStudents = studentsArray.filter(student => {
-            return student.name.toLowerCase().includes(searchText)
+            return student.name.toLowerCase().includes(searchText);
+        });
+
+        if (filteredStudents.length === 0) {
+            cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
+        } else {
+            cardsContainer.innerHTML = createStudentCards(filteredStudents);
+        }
+    });
+}
+
+
+function searchStudentsBySurname() {
+    const searchInput = document.getElementById('students-search-surname');
+    const cardsContainer = document.getElementById('cardsColumn');
+    searchInput.addEventListener('input', function () {
+        const studentsArray = loadFromLocalStorage('students');
+        const searchText = searchInput.value.toLowerCase();
+
+        const filteredStudents = studentsArray.filter(student => {
+            return student.surname.toLowerCase().includes(searchText)
         });
 
         if (!searchInput.length === 0) {
@@ -40,6 +60,7 @@ function handleAdd() {
 
 function createStudentsEventListeners() {
     searchStudentsByName();
+    searchStudentsBySurname();
 }
 
 export { createStudentsEventListeners }
