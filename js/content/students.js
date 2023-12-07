@@ -87,8 +87,46 @@ function createStudentCards(pStudentsArray) {
       `;
     }).join('');
   
-  return `<div class="row mb-5 mt-5">${cards}</div>`;
+  return `<div class="row mb-5 mt-5">${createAddCard()} ${cards}</div>`;
 }
+
+function createAddCard() {
+      return `
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center fw-bold">
+              <span><input type="text" class="form-control custom-add" id="students-add-name" placeholder="Name"></span>
+              <span class=""><input type="text" class="form-control custom-add" id="students-search-class" placeholder="Class"></span>
+            </div>        
+            <div class="card-body text-start">
+              <p class="d-flex justify-content-between align-items-center">
+                <span>Date of Birth: </span>
+                <span><input type="text" class="form-control custom-add" id="students-add-dob" placeholder="Date of Birth"></span>
+              </p>
+              <p class="d-flex justify-content-between align-items-center">
+                <span>Address: </span>
+                <span><input type="text" class="form-control custom-add" id="students-add-place" placeholder="Street & City"></span>
+              </p>
+              <p class="d-flex justify-content-between align-items-center">
+                <span>Parents: </span>
+                <span><input type="text" class="form-control custom-add" id="students-add-parents" placeholder="Parents"></span>
+              </p>
+              <p class="d-flex justify-content-between align-items-center">
+                <span>Contact: </span>
+                <span><input type="text" class="form-control custom-add" id="students-add-contact" placeholder="Contact Nr."></span>
+              </p>
+            </div>
+            <div class="card-footer text-end">
+            <div class="row">
+            <div class="col">
+              <button type="button" id="edit-btn" class="btn btn-light w-100"><i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      `;  
+    }
 
 const renderStudents = () => {
    createStudentsContent()
