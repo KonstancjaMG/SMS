@@ -1,4 +1,5 @@
 import { students } from "../data.js";
+import { createStudentsEventListeners } from "../event_listeners/students_event_listeners.js";
 
 function createStudentsContent() {
   const contentContainer = document.getElementById('contentWrapper');
@@ -62,6 +63,7 @@ function createStudentCards(pStudentsArray) {
 
 const renderStudents = () => {
    createStudentsContent()
+   createStudentsEventListeners();
   };
 
-  export {renderStudents};
+  export {renderStudents, createStudentCards};
