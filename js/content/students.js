@@ -1,5 +1,6 @@
 import { students } from "../data.js";
 import { createStudentsEventListeners } from "../event_listeners/students_event_listeners.js";
+import {createSeparatorGrey} from '../utils/spacer.js'
 
 function createStudentsContent() {
   const contentContainer = document.getElementById('contentWrapper');
@@ -7,6 +8,7 @@ function createStudentsContent() {
       <div class="container" id="search-bar-container">
       ${createSearchBar()}
       </div>
+      ${createSeparatorGrey()}
       <div class="ps-5 pe-5" id="cardsColumn">
         ${createStudentCards(students)}
       </div>
@@ -15,8 +17,7 @@ function createStudentsContent() {
 
 function createSearchBar() {
   return `
-  <div class="container mb-3 mt-5">
-  <label for="first-row" class="form-label fs-5">Search</label>
+  <div class="container mb-3 mt-4 mb-4">
   <div id="first-row" class="row g-3 d-flex justify-content-center">
       <div class="col-md-4 col-sm-4">
           <input type="text" class="form-control" id="students-search-name" placeholder="Name">
@@ -47,7 +48,7 @@ function createSearchBar() {
 function createStudentCards(pStudentsArray) {
   const cards = pStudentsArray.map(student => {
       return `
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center fw-bold">
               <span>${student.name} ${student.surname}</span>
@@ -72,8 +73,14 @@ function createStudentCards(pStudentsArray) {
               </p>
             </div>
             <div class="card-footer text-end">
-              <button type="button" id="edit-btn" class="btn btn-light"><i class="fa-solid fa-pen"></i></button>
-              <button type="button" id="remove-btn" class="btn btn-light"><i class="fa-solid fa-trash"></i></button>
+            <div class="row">
+            <div class="col">
+              <button type="button" id="edit-btn" class="btn btn-light w-100"><i class="fa-solid fa-pen"></i></button>
+            </div>
+            <div class="col">
+              <button type="button" id="remove-btn" class="btn btn-light w-100"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
             </div>
           </div>
         </div>

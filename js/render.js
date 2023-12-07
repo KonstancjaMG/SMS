@@ -4,7 +4,6 @@ import { renderContent } from "./content/content.js";
 
 const renderApp = () => {
     renderNav();
-    createSeparator();
     renderContent();
     // renderFooter();
   };

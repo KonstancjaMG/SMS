@@ -1,9 +1,11 @@
 const app = document.getElementById("app");
 
 function createSeparator() {
-    const separator = document.createElement('div');
-    separator.classList.add('separator');
-    app.appendChild(separator);
+    return `<div class="separator"></div>`
 }
 
-export {createSeparator}
+function createSeparatorGrey() {
+    return `<div class="separator-grey"></div>`
+}
+
+export {createSeparator, createSeparatorGrey}

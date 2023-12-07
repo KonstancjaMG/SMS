@@ -1,4 +1,5 @@
 import { linksArray } from "./data.js";
+import { createSeparator } from "./utils/spacer.js";
 
 const app = document.getElementById("app");
 
@@ -23,6 +24,7 @@ const renderNav = () => {
       </div>
   </div>
 </nav>
+${createSeparator()}
 `;
 };
 
