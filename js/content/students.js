@@ -11,7 +11,7 @@ function createStudentsContent(pArray) {
       </div>
       ${createSeparatorGrey()}
       <div class="ps-5 pe-5" id="cardsColumn">
-      <div id="add-status" class="mt-4 text-center" style="display:none"></div>
+      <div id="add-status" class="text-center mt-2" style="display:none"></div>
         ${createStudentCards(pArray)}
       </div>
   `;
