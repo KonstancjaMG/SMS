@@ -1,8 +1,8 @@
 import { linksArray } from "../data.js";
-import { renderStudents } from "../content/students.js";
-import { renderClasses } from "../content/classes.js";
-import { renderTeachers } from "../content/teachers.js";
-import { renderGrades } from "../content/grades.js";
+import { renderStudents } from "../page/students.js";
+import { renderClasses } from "../page/classes.js";
+import { renderTeachers } from "../page/teachers.js";
+import { renderGrades } from "../page/grades.js";
 import { clearContent } from "../utils/clear_content.js";
 
 const createContentEventListeners = () =>

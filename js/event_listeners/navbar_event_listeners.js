@@ -1,10 +1,11 @@
 import { linksArray } from "../data.js";
-import { renderStudents } from "../content/students.js";
-import { renderClasses } from "../content/classes.js";
-import { renderTeachers } from "../content/teachers.js";
-import { renderGrades } from "../content/grades.js";
-import { renderNotes } from "../content/notes.js";
+import { renderStudents } from "../page/students.js";
+import { renderClasses } from "../page/classes.js";
+import { renderTeachers } from "../page/teachers.js";
+import { renderGrades } from "../page/grades.js";
+import { renderNotes } from "../page/notes.js";
 import { clearContent } from "../utils/clear_content.js";
+import { renderHome } from "../page/home/home.page.js";
 
 const createNavEventListeners = () =>
   linksArray.forEach((link) => {
@@ -13,6 +14,7 @@ const createNavEventListeners = () =>
     if (linkID) {
       linkID.addEventListener("click", () => {
         clearContent();
+        if (link.url === 'home') {renderHome();}
         if (link.url === 'students') {renderStudents();}
         if (link.url === 'classes') {renderClasses();}
         if (link.url === 'teachers') {renderTeachers();}

@@ -21,6 +21,12 @@ const renderNav = () => {
                   <button id="${link.url}" class="btn btn-link custom-button ${link.status}">${link.name}</button>
               </li>
           `).join("")}
+          <li class="nav-item">
+             <button id="${link.url}" class="btn btn-link custom-button ${link.status}" onclick="renderHome()">${link.name}</button>
+          </li>
+          <li class="nav-item">
+            <button id="${link.url}" class="btn btn-link custom-button ${link.status}" onclick="renderStudents()">${link.name}</button>
+          </li>
       </div>
   </div>
 </nav>

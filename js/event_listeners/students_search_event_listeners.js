@@ -1,5 +1,5 @@
 import { loadFromLocalStorage } from "../local_storage/local_storage_upload.js";
-import { createStudentCards } from "../content/students.js";
+import { createStudentCards } from "../page/students.js";
 
 function searchStudentsByName() {
     const searchInput = document.getElementById('students-search-name');

@@ -1,5 +1,5 @@
 import { loadFromLocalStorage, saveToLocalStorage } from "../local_storage/local_storage_upload.js";
-import { createStudentCards, renderStudents } from "../content/students.js";
+import { createStudentCards, renderStudents } from "../page/students.js";
 import { addStudent } from "./students_add_event_listeners.js";
 import {searchStudentsByName, searchStudentsBySurname, searchStudentsByDob, searchStudentsByClass, searchStudentsByPlace, searchStudentsByContactNr} from "./students_search_event_listeners.js"
 
