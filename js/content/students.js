@@ -1,6 +1,6 @@
 import { loadFromLocalStorage } from "../local_storage/local_storage_upload.js";
 import { students } from "../data.js";
-import { createStudentsEventListeners } from "../event_listeners/students_event_listeners.js";
+import { createStudentsEventListeners } from "../event_listeners/students_create_event_listeners.js";
 import {createSeparatorGrey} from '../utils/spacer.js'
 
 function createStudentsContent(pArray) {
