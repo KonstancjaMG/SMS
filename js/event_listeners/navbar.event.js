@@ -1,13 +1,13 @@
-import { linksArray } from "../data.js";
-import { renderStudents } from "../content/students.js";
-import { renderClasses } from "../content/classes.js";
-import { renderTeachers } from "../content/teachers.js";
-import { renderGrades } from "../content/grades.js";
-import { renderNotes } from "../content/notes.js";
-import { clearContent } from "../utils/clear_content.js";
+import { links } from "../data.js";
+import { renderStudents } from "../pages/students.js";
+import { renderClasses } from "../pages/classes.js";
+import { renderTeachers } from "../pages/teachers.js";
+import { renderGrades } from "../pages/grades.js";
+import { renderNotes } from "../pages/notes.js";
+import { clearContent } from "../utils/clear.content.js";
 
 const createNavEventListeners = () =>
-  linksArray.forEach((link) => {
+  links.forEach((link) => {
     let linkID = document.getElementById(link.url);
 
     if (linkID) {
@@ -29,3 +29,10 @@ const createNavEventListeners = () =>
   });
 
 export { createNavEventListeners };
+
+{/* <li class="nav-item">
+<button id="${link.url}" class="btn btn-link custom-button ${link.status}" onclick="renderHome()">${link.name}</button>
+</li>
+<li class="nav-item">
+<button id="${link.url}" class="btn btn-link custom-button ${link.status}" onclick="renderStudents()">${link.name}</button>
+</li> */}

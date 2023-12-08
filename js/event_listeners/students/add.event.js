@@ -1,5 +1,5 @@
-import { loadFromLocalStorage, saveToLocalStorage } from "../local_storage/local_storage_upload.js";
-import { renderStudents } from "../content/students.js";
+import { loadFromLocalStorage, saveToLocalStorage } from "../../local_storage/local.storage.js";
+import { renderStudents } from "../../pages/students.js";
 
 const isValidName = (name) => /^[a-zA-Z ]+$/.test(name);
 const isValidSurname = (surname) => /^[A-Za-z]+([- ][A-Za-z]+)*$/.test(surname);
@@ -24,7 +24,6 @@ function addStudent() {
     const addBtn = document.getElementById('add-btn');
 
     addBtn.addEventListener('click', function() {
-        const addContainer = document.getElementById('add-container')
         const nameInput = document.getElementById('students-add-name');
         const surnameInput = document.getElementById('students-add-surname');
         const classInput = document.getElementById('students-add-class');

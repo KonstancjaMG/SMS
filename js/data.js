@@ -1,4 +1,4 @@
-const linksArray = [
+const links = [
   { name: "Students", url: "students", status: '' },
   { name: "Classes", url: "classes", status: '' },
   { name: "Teachers", url: "teachers", status: '' },
@@ -81,4 +81,4 @@ const notes = [
 
 
 
-export {linksArray, students, classes, teachers, grades, notes}
+export {links, students, classes, teachers, grades, notes}

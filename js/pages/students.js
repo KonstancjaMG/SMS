@@ -1,6 +1,6 @@
-import { loadFromLocalStorage } from "../local_storage/local_storage_upload.js";
+import { loadFromLocalStorage } from "../local_storage/local.storage.js";
 import { students } from "../data.js";
-import { createStudentsEventListeners } from "../event_listeners/students_create_event_listeners.js";
+import { createStudentsEventListeners } from "../event_listeners/students/create.event.js";
 import {createSeparatorGrey} from '../utils/spacer.js'
 
 function createStudentsContent(pArray) {
@@ -73,7 +73,7 @@ function createStudentCards(pStudentsArray) {
             <div class="card-footer text-end">
             <div class="row">
             <div class="col">
-              <button type="button" id="edit-btn" class="btn btn-light w-100"><i class="fa-solid fa-pen"></i></button>
+            <button type="button" class="btn btn-light w-100 edit-btn" data-edit-student-id="${student.id}"><i class="fa-solid fa-pen"></i></button>
             </div>
             <div class="col">
               <button type="button" class="btn btn-light w-100 remove-btn" data-student-id="${student.id}"><i class="fa-solid fa-trash"></i></button>

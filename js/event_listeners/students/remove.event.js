@@ -1,4 +1,4 @@
-import { renderStudents } from "../content/students.js";
+import { renderStudents } from "../../pages/students.js";
 
 
 function handleRemove() {
