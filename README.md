@@ -21,6 +21,27 @@ https://konstancjamg-sms.netlify.app/
 - [ ] - Creation of footer structure.
 - [ ] - Creation of footer styles.
 - [x] - Add of localStorage.
+- [x] - Add students.
+- [x] - Remove students.
+- [x] - Search students.
+- [ ] - Edit students.
+- [ ] - Add teachers.
+- [ ] - Remove teachers.
+- [ ] - Search teachers.
+- [ ] - Edit teachers.
+- [ ] - Add classes.
+- [ ] - Remove classes.
+- [ ] - Search classes.
+- [ ] - Edit classes.
+- [ ] - Add grades.
+- [ ] - Remove grades.
+- [ ] - Search grades.
+- [ ] - Edit grades.
+- [ ] - Add notes.
+- [ ] - Search notes.
+- [ ] - Remove notes.
+- [ ] - Edit notes.
+
 - [ ] - Adjustements for different viewports.
 Optional:
 - [ ] - Creation of mobile version of the application.
