@@ -1,118 +1,56 @@
 import { loadFromLocalStorage } from "../../local_storage/local.storage.js";
 import { getStudentCards } from "../../pages/students/students.template.js";
 
-function searchStudentsByName() {
-    const searchInput = document.getElementById('students-search-name');
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+function searchStudents(searchType) {
+    const searchInput = document.getElementById(`students-search-${searchType}`);
     const cardsContainer = document.getElementById('cardsColumn');
-    searchInput.addEventListener('input', function () {
+
+    const searchFieldMap = {
+        name: 'name',
+        surname: 'surname',
+        dob: 'dateOfBirth',
+        class: 'class',
+        place: 'address',
+        contact: 'parentsContact'
+    };
+
+    const debounceSearch = debounce(() => {
         const studentsArray = loadFromLocalStorage('students');
         const searchText = searchInput.value.toLowerCase();
 
         const filteredStudents = studentsArray.filter(student => {
-            return student.name.toLowerCase().includes(searchText);
+            const field = student[searchFieldMap[searchType]];
+            return field && field.toString().toLowerCase().includes(searchText);
         });
 
-        if (filteredStudents.length === 0) {
-            cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
-        } else {
-            cardsContainer.innerHTML = getStudentCards(filteredStudents);
-        }
-    });
+        cardsContainer.innerHTML = filteredStudents.length === 0 
+            ? `<div class="text-center">No students found...</div>` 
+            : getStudentCards(filteredStudents);
+    }, 300);
+
+    searchInput.addEventListener('input', debounceSearch);
 }
 
-function searchStudentsBySurname() {
-    const searchInput = document.getElementById('students-search-surname');
-    const cardsContainer = document.getElementById('cardsColumn');
-    searchInput.addEventListener('input', function () {
-        const studentsArray = loadFromLocalStorage('students');
-        const searchText = searchInput.value.toLowerCase();
-
-        const filteredStudents = studentsArray.filter(student => {
-            return student.surname.toLowerCase().includes(searchText);
-        });
-
-        if (filteredStudents.length === 0) {
-            cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
-        } else {
-            cardsContainer.innerHTML = getStudentCards(filteredStudents);
-        }
-    });
+function initializeSearch() {
+    searchStudents('name');
+    searchStudents('surname');
+    searchStudents('dob');
+    searchStudents('class');
+    searchStudents('place');
+    searchStudents('contact');
 }
 
-function searchStudentsByDob() {
-    const searchInput = document.getElementById('students-search-dob');
-    const cardsContainer = document.getElementById('cardsColumn');
-    searchInput.addEventListener('input', function () {
-        const studentsArray = loadFromLocalStorage('students');
-        const searchText = searchInput.value.toLowerCase();
 
-        const filteredStudents = studentsArray.filter(student => {
-            return student.dateOfBirth.toLowerCase().includes(searchText);
-        });
-
-        if (filteredStudents.length === 0) {
-            cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
-        } else {
-            cardsContainer.innerHTML = getStudentCards(filteredStudents);
-        }
-    });
-}
-
-function searchStudentsByClass() {
-    const searchInput = document.getElementById('students-search-class');
-    const cardsContainer = document.getElementById('cardsColumn');
-    searchInput.addEventListener('input', function () {
-        const studentsArray = loadFromLocalStorage('students');
-        const searchText = searchInput.value.toLowerCase();
-
-        const filteredStudents = studentsArray.filter(student => {
-            return student.class.toLowerCase().includes(searchText);
-        });
-
-        if (filteredStudents.length === 0) {
-            cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
-        } else {
-            cardsContainer.innerHTML = getStudentCards(filteredStudents);
-        }
-    });
-}
-
-function searchStudentsByPlace() {
-    const searchInput = document.getElementById('students-search-place');
-    const cardsContainer = document.getElementById('cardsColumn');
-    searchInput.addEventListener('input', function () {
-        const studentsArray = loadFromLocalStorage('students');
-        const searchText = searchInput.value.toLowerCase();
-
-        const filteredStudents = studentsArray.filter(student => {
-            return student.address.toLowerCase().includes(searchText);
-        });
-
-        if (filteredStudents.length === 0) {
-            cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
-        } else {
-            cardsContainer.innerHTML = getStudentCards(filteredStudents);
-        }
-    });
-}
-
-function searchStudentsByContactNr() {
-    const searchInput = document.getElementById('students-search-contact');
-    const cardsContainer = document.getElementById('cardsColumn');
-    searchInput.addEventListener('input', function () {
-        const studentsArray = loadFromLocalStorage('students');
-        const searchText = searchInput.value.toLowerCase();
-
-        const filteredStudents = studentsArray.filter(student => {
-            return student.parentsContact.toLowerCase().includes(searchText);
-        });
-
-        if (filteredStudents.length === 0) {
-            cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
-        } else {
-            cardsContainer.innerHTML = getStudentCards(filteredStudents);
-        }
-    });
-}
-
-export {searchStudentsByName, searchStudentsBySurname, searchStudentsByDob, searchStudentsByClass, searchStudentsByPlace, searchStudentsByContactNr}
+export {initializeSearch}

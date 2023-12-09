@@ -8,67 +8,84 @@ const isValidDob = (dob) => /^\d{4}-\d{2}-\d{2}$/.test(dob);
 const isValidPlace = (place) => /^[a-zA-Z0-9,.\s]+$/.test(place);
 const isValidContact = (contact) => /^\d{3}-\d{4}$/.test(contact);
 
+function getInputFields() {
+    return {
+        nameInput: document.getElementById('students-add-name'),
+        surnameInput: document.getElementById('students-add-surname'),
+        classInput: document.getElementById('students-add-class'),
+        dobInput: document.getElementById('students-add-dob'),
+        placeInput: document.getElementById('students-add-place'),
+        contactInput: document.getElementById('students-add-contact'),
+        addButton: document.getElementById('add-btn')
+    };
+}
+
 const createNewStudent = (id, name, surname, cls, dob, address, contact) => ({
-    id,
-    name,
-    surname,
-    class: cls,
-    dateOfBirth: dob,
-    address,
-    parentsContact: contact
+    id, name, surname, class: cls, dateOfBirth: dob, address, parentsContact: contact
 });
 
-
-
 function addStudent() {
-    const addBtn = document.getElementById('add-btn');
+    const inputs = getInputFields();
 
-    addBtn.addEventListener('click', function() {
-        const nameInput = document.getElementById('students-add-name');
-        const surnameInput = document.getElementById('students-add-surname');
-        const classInput = document.getElementById('students-add-class');
-        const dobInput = document.getElementById('students-add-dob');
-        const placeInput = document.getElementById('students-add-place');
-        const contactInput = document.getElementById('students-add-contact');
-        const addButton = document.getElementById('add-btn');
+    inputs.addButton.addEventListener('click', function() {
+        resetInputBorders(inputs);
 
-        [nameInput, surnameInput, classInput, dobInput, placeInput, contactInput].forEach(input => {
-            input.classList.remove('border-danger');
-        });
-
-        const name = document.getElementById('students-add-name').value;
-        const surname = document.getElementById('students-add-surname').value;
-        const cls = document.getElementById('students-add-class').value;
-        const dob = document.getElementById('students-add-dob').value;
-        const place = document.getElementById('students-add-place').value;
-        const contact = document.getElementById('students-add-contact').value;
-
-        if (isValidName(name) && isValidSurname(surname) && isValidClass(cls) &&
-            isValidDob(dob) && isValidPlace(place) && isValidContact(contact)) {
-
-            const studentsArray = loadFromLocalStorage('students') || [];
-            const nextId = studentsArray.length > 0 ? Math.max(...studentsArray.map(student => student.id)) + 1 : 1;
-            const newStudent = createNewStudent(nextId, name, surname, cls, dob, place, contact);
-
-            studentsArray.push(newStudent);
-            saveToLocalStorage('students', studentsArray);
+        const studentData = getStudentData(inputs);
+        if (isInputDataValid(studentData)) {
+            addNewStudentToLocalStorage(studentData);
             renderStudents();
-            const addSuccess = document.getElementById('add-status');
-            addSuccess.classList.add('text-success')
-            addSuccess.style.display = 'block';
-            addSuccess.innerHTML = 'Student added successfully!'
-
+            showSuccessMessage('Student added successfully!');
         } else {
-            addButton.classList.add('border-danger');
-
-            if (!isValidName(name)) nameInput.classList.add('border-danger')
-            if (!isValidSurname(surname)) surnameInput.classList.add('border-danger');
-            if (!isValidClass(cls)) classInput.classList.add('border-danger');
-            if (!isValidDob(dob)) dobInput.classList.add('border-danger');
-            if (!isValidPlace(place)) placeInput.classList.add('border-danger');
-            if (!isValidContact(contact)) contactInput.classList.add('border-danger');
+            addBorderIfInvalid(inputs, studentData);
         }
-    });  
+    });
+}
+
+function resetInputBorders(inputs) {
+    Object.values(inputs).forEach(input => {
+        if (input.classList) input.classList.remove('border-danger');
+    });
+}
+
+function getStudentData(inputs) {
+    return {
+        name: inputs.nameInput.value,
+        surname: inputs.surnameInput.value,
+        class: inputs.classInput.value,
+        dob: inputs.dobInput.value,
+        place: inputs.placeInput.value,
+        contact: inputs.contactInput.value
+    };
+}
+
+function isInputDataValid(data) {
+    return isValidName(data.name) && isValidSurname(data.surname) &&
+           isValidClass(data.class) && isValidDob(data.dob) &&
+           isValidPlace(data.place) && isValidContact(data.contact);
+}
+
+function addNewStudentToLocalStorage(data) {
+    const studentsArray = loadFromLocalStorage('students') || [];
+    const nextId = studentsArray.length > 0 ? Math.max(...studentsArray.map(s => s.id)) + 1 : 1;
+    const newStudent = createNewStudent(nextId, data.name, data.surname, data.class, data.dob, data.place, data.contact);
+    studentsArray.push(newStudent);
+    saveToLocalStorage('students', studentsArray);
+}
+
+function showSuccessMessage(message) {
+    const addSuccess = document.getElementById('add-status');
+    addSuccess.innerHTML = message;
+    addSuccess.classList.add('text-success');
+    addSuccess.style.display = 'block';
+}
+
+function addBorderIfInvalid(inputs, data) {
+    if (!isValidName(data.name)) inputs.nameInput.classList.add('border-danger')
+    if (!isValidSurname(data.surname)) inputs.surnameInput.classList.add('border-danger');
+    if (!isValidClass(data.cls)) inputs.classInput.classList.add('border-danger');
+    if (!isValidDob(data.dob)) inputs.dobInput.classList.add('border-danger');
+    if (!isValidPlace(data.place)) inputs.placeInput.classList.add('border-danger');
+    if (!isValidContact(data.contact)) inputs.contactInput.classList.add('border-danger');
 }
 
 export {addStudent}
