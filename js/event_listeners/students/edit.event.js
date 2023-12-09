@@ -1,5 +1,5 @@
 import { renderStudentEdit } from "../../pages/edit/students/students.page.js";
-import { renderStudents } from "../../pages/students.js";
+import { renderStudents } from "../../pages/students/students.page.js";
 
 function loadEditPage() {
     const cardsContainer = document.getElementById('contentWrapper');

@@ -1,5 +1,5 @@
 import { loadFromLocalStorage } from "../../local_storage/local.storage.js";
-import { createStudentCards } from "../../pages/students.js";
+import { getStudentCards } from "../../pages/students/students.template.js";
 
 function searchStudentsByName() {
     const searchInput = document.getElementById('students-search-name');
@@ -15,7 +15,7 @@ function searchStudentsByName() {
         if (filteredStudents.length === 0) {
             cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
         } else {
-            cardsContainer.innerHTML = createStudentCards(filteredStudents);
+            cardsContainer.innerHTML = getStudentCards(filteredStudents);
         }
     });
 }
@@ -34,7 +34,7 @@ function searchStudentsBySurname() {
         if (filteredStudents.length === 0) {
             cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
         } else {
-            cardsContainer.innerHTML = createStudentCards(filteredStudents);
+            cardsContainer.innerHTML = getStudentCards(filteredStudents);
         }
     });
 }
@@ -53,7 +53,7 @@ function searchStudentsByDob() {
         if (filteredStudents.length === 0) {
             cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
         } else {
-            cardsContainer.innerHTML = createStudentCards(filteredStudents);
+            cardsContainer.innerHTML = getStudentCards(filteredStudents);
         }
     });
 }
@@ -72,7 +72,7 @@ function searchStudentsByClass() {
         if (filteredStudents.length === 0) {
             cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
         } else {
-            cardsContainer.innerHTML = createStudentCards(filteredStudents);
+            cardsContainer.innerHTML = getStudentCards(filteredStudents);
         }
     });
 }
@@ -91,7 +91,7 @@ function searchStudentsByPlace() {
         if (filteredStudents.length === 0) {
             cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
         } else {
-            cardsContainer.innerHTML = createStudentCards(filteredStudents);
+            cardsContainer.innerHTML = getStudentCards(filteredStudents);
         }
     });
 }
@@ -110,7 +110,7 @@ function searchStudentsByContactNr() {
         if (filteredStudents.length === 0) {
             cardsContainer.innerHTML = `<div class="text-center">No students found...</div>`;
         } else {
-            cardsContainer.innerHTML = createStudentCards(filteredStudents);
+            cardsContainer.innerHTML = getStudentCards(filteredStudents);
         }
     });
 }

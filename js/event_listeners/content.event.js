@@ -1,5 +1,5 @@
 import { links } from "../data.js";
-import { renderStudents } from "../pages/students.js";
+import { renderStudents } from "../pages/students/students.page.js";
 import { renderClasses } from "../pages/classes.js";
 import { renderTeachers } from "../pages/teachers.js";
 import { renderGrades } from "../pages/grades.js";

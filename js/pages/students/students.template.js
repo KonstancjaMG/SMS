@@ -1,24 +1,6 @@
-import { loadFromLocalStorage } from "../local_storage/local.storage.js";
-import { students } from "../data.js";
-import { createStudentsEventListeners } from "../event_listeners/students/create.event.js";
-import {createSeparatorGrey} from '../utils/spacer.js'
-
-function createStudentsContent(pArray) {
-  const contentContainer = document.getElementById('contentWrapper');
-  contentContainer.innerHTML = `
-      <div class="container" id="search-bar-container">
-      ${createSearchBar()}
-      </div>
-      ${createSeparatorGrey()}
-      <div class="ps-5 pe-5" id="cardsColumn">
-      <div id="add-status" class="text-center mt-2" style="display:none"></div>
-        ${createStudentCards(pArray)}
-      </div>
-  `;
-}
-
-function createSearchBar() {
+function getSearchBar() {
   return `
+  <div class="container" id="search-bar-container">
   <div class="container mb-3 mt-4 mb-2">
   <div id="first-row" class="row g-3 d-flex justify-content-center">
       <div class="col-md-4 col-sm-4">
@@ -43,11 +25,11 @@ function createSearchBar() {
       </div>
   </div>
 </div>
-
+</div>
   `
 }
 
-function createStudentCards(pStudentsArray) {
+function getStudentCards(pStudentsArray, pClassesOptions) {
   const cards = pStudentsArray.map(student => {
       return `
         <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
@@ -85,13 +67,10 @@ function createStudentCards(pStudentsArray) {
       `;
     }).join('');
   
-  return `<div class="row mb-5 mt-4">${createAddCard()} ${cards}</div>`;
+  return `<div class="row mb-5 mt-4">${createAddCard(pClassesOptions)} ${cards}</div>`;
 }
 
-function createAddCard() {
-
-  const classesArray = JSON.parse(localStorage.getItem('classes')) || [];
-  const classOptions = classesArray.map(cls => `<option value="${cls.id}">${cls.id}</option>`).join('');
+function createAddCard(pClassesOptions) {
       
   return `
         <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4" id="add-container">
@@ -101,7 +80,7 @@ function createAddCard() {
               <span class="ms-2"><input type="text" class="form-control custom-add" id="students-add-surname" placeholder="Surname"></span>
               <span class="ms-5">
                   <select class="form-control custom-add" id="students-add-class">
-                      ${classOptions}
+                      ${pClassesOptions}
                   </select>
               </span>
             </div>        
@@ -131,10 +110,6 @@ function createAddCard() {
       `;  
     }
 
-const renderStudents = () => {
-  const storedStudents = loadFromLocalStorage('students') || students;
-   createStudentsContent(storedStudents);
-   createStudentsEventListeners();
-  };
 
-  export {renderStudents, createStudentCards};
+
+  export {getStudentCards, getSearchBar};

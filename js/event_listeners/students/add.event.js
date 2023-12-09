@@ -1,5 +1,5 @@
 import { loadFromLocalStorage, saveToLocalStorage } from "../../local_storage/local.storage.js";
-import { renderStudents } from "../../pages/students.js";
+import { renderStudents } from "../../pages/students/students.page.js";
 
 const isValidName = (name) => /^[a-zA-Z ]+$/.test(name);
 const isValidSurname = (surname) => /^[A-Za-z]+([- ][A-Za-z]+)*$/.test(surname);
