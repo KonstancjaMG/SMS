@@ -1,14 +1,27 @@
-import { loadFromLocalStorage, saveToLocalStorage } from "../../local_storage/local.storage.js";
+import { renderStudentEdit } from "../../pages/edit/students/students.page.js";
+import { renderStudents } from "../../pages/students.js";
 
-function handleEdit() {
-    const cardsContainer = document.getElementById('cardsColumn');
+function loadEditPage() {
+    const cardsContainer = document.getElementById('contentWrapper');
 
     cardsContainer.addEventListener('click', function (event) {
         if (event.target.classList.contains('edit-btn')) {
             const studentId = event.target.getAttribute('data-edit-student-id');
-            console.log(studentId)
+            renderStudentEdit(cardsContainer, studentId);
         }
     });
 }
 
-export {handleEdit}
+function confirmEdit() {
+    const confirmBtn = document.getElementById('confirm-btn');
+    confirmBtn.addEventListener('click', () => {
+
+        // SAVE DATA FUNCTION
+        // - validation
+        // - save to LS if not empty
+
+        renderStudents()
+    })
+}
+
+export {loadEditPage, confirmEdit}

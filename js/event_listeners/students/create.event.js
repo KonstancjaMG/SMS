@@ -1,6 +1,6 @@
 import { addStudent } from "./add.event.js";
 import { handleRemove } from "./remove.event.js";
-import { handleEdit } from "./edit.event.js";
+import { loadEditPage } from "./edit.event.js";
 import {searchStudentsByName, searchStudentsBySurname, searchStudentsByDob, searchStudentsByClass, searchStudentsByPlace, searchStudentsByContactNr} from "./search.event.js"
 
 function createStudentsEventListeners() {
@@ -12,7 +12,7 @@ function createStudentsEventListeners() {
     searchStudentsByContactNr();
     addStudent();
     handleRemove();
-    handleEdit();
+    loadEditPage();
 }
 
 export {createStudentsEventListeners}
