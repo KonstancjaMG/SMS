@@ -1,11 +1,12 @@
 import { renderNav } from "./navigation.js";
-import {createSeparator} from "./spacer.js";
-import { renderContent } from "./content/content.js";
+import { renderContent } from "./pages/content.js";
+import { renderHome } from "./pages/home/home.page.js";
+import { getContentContainer } from "./utils/dom.js";
 
 const renderApp = () => {
     renderNav();
-    createSeparator();
     renderContent();
+    renderHome(getContentContainer());
     // renderFooter();
   };
   export { renderApp };
