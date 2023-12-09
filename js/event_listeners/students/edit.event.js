@@ -24,4 +24,8 @@ function confirmEdit() {
     })
 }
 
-export {loadEditPage, confirmEdit}
+function cancelEdit() {
+    document.getElementById('cancel-btn').addEventListener('click', renderStudents);
+}
+
+export {loadEditPage, confirmEdit, cancelEdit}
