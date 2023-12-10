@@ -24,7 +24,7 @@ https://konstancjamg-sms.netlify.app/
 - [x] - Add students.
 - [x] - Remove students.
 - [x] - Search students.
-- [ ] - Edit students.
+- [x] - Edit students.
 - [ ] - Add teachers.
 - [ ] - Remove teachers.
 - [ ] - Search teachers.
@@ -53,7 +53,7 @@ Optional:
 * Localized Font Import from Google Fonts
 * Utilization of Bootstrap framework
 * Dynamic student search
-* Add/Remove students functionalities
+* Add/Edit/Remove students functionalities
 
 ## Development - Navbar
 This project uses JavaScript with the Bootstrap framework.
@@ -84,22 +84,39 @@ SMS/
     * main.js # The main JavaScript entry point
     * navigation.js # Script for navigation-related functionality
     * render.js # Script for rendering UI components
-        * /content
-            * classes.js
-            * grades.js
-            * content.js # Creation and render of main page
-            * teachers.js
-            * students.js # Creation and render of students page
-            * notes.js 
         * /event_listeners
+            * /students
+                * add.event.js # Add new student event listeners
+                * create.event.js # Renders all students related event listeners
+                * edit.event.js # Edit student event listeners
+                * remove.event.js # Remove student event listeners
+                * search.event.js # Search student event listeners
             * content_event_listeners.js # All event listeners for main page
             * navbar_event_listeners.js # All event listeners for navbar
-            * students_event_listeners.js # All event listeners for students page
         * /local_storage
             * local_storage_upload.js # Script handling load/add/remove from localStorage
+        * /pages
+            * /edit
+                * /students
+                    * students.data.js # Data retrieval and manipulation for students edit page
+                    * students.page.js # Render of the students edit page
+                    * students.template.js  # HTML template for students edit page
+            * /home
+                * home.data.js # Data retrieval and manipulation for home page
+                * home.page.js  # Render of the home page
+                * home.template.js # HTML template for home page
+            * /students
+                * students.data.js # Data retrieval and manipulation for students page
+                * students.page.js # Render of the students page
+                * students.template.js # HTML template for the students page
+            * classes.js
+            * grades.js
+            * teachers.js
+            * notes.js 
         * /utils
             * clear_content.js # Script to clear content of the page
             * spacer.js # Script to create visual separators
-* home.html # The main HTML file for the School Management System
+            * dom.js # Script to access the main container of the content part
+* index.html # The main HTML file for the School Management System
 * package.json # Project metadata and dependency management
 * README.md # The README file for the project documentation
