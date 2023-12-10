@@ -43,8 +43,6 @@ https://konstancjamg-sms.netlify.app/
 - [ ] - Edit notes.
 
 - [ ] - Adjustements for different viewports.
-Optional:
-- [ ] - Creation of mobile version of the application.
 
 ## Features - Navbar
 * Responsive Navigation Bar

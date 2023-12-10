@@ -1,6 +1,6 @@
 function getSearchBar() {
   return `
-  <div class="container" id="search-bar-container">
+  <div class="container search-bar-container">
   <div class="container mb-3 mt-4 mb-2">
   <div id="first-row" class="row g-3 d-flex justify-content-center">
       <div class="col-md-4 col-sm-4">
