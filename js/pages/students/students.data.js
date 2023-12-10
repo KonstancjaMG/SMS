@@ -7,7 +7,7 @@ export function createStudentsContent(pArray, pClassesOptions) {
         
         ${getSearchBar()}
         ${createSeparatorGrey()}
-        <div class="ps-5 pe-5" id="cardsColumn">
+        <div class="ps-5 pe-5 cardsColumn border">
         <div id="add-status" class="text-center mt-2" style="display:none"></div>
           ${getStudentCards(pArray, pClassesOptions)}
         </div>

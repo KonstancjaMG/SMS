@@ -30,9 +30,9 @@ const students = [
   { id: 20, name: 'Grace', surname: 'Thompson', class: 'B1', dateOfBirth: '2008-04-27', address: '105 Oak Grove, Raccoon City', parentsContact: '555-1020' }
 ];
 
+const classLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-
-const classes = [{id: 'A1'}, {id: 'B1'},]
+const classes = [{id: 'A1', description: 'Placeholder'}, {id: 'B1', description: 'Placeholder'}, {id: 'C1', description: 'Placeholder'}, {id: 'D1', description: 'Placeholder'}, {id: 'E1', description: 'Placeholder'}, {id: 'F1', description: 'Placeholder'}]
 
 const teachers = [
   { id: 1, name: 'Leon', surname: 'Kennedy', address: '101 Raccoon St., Raccoon City', contactInfo: '555-3001', dateOfBirth: '1977-06-03', licenseId: 'LK-3001', subject: 'Math' },
@@ -81,4 +81,4 @@ const notes = [
 
 
 
-export {links, students, classes, teachers, grades, notes}
+export {links, students, classes, teachers, grades, notes, classLetters}

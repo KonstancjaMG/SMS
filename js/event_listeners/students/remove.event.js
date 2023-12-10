@@ -2,7 +2,7 @@ import { renderStudents } from "../../pages/students/students.page.js";
 
 
 function handleRemove() {
-    const cardsContainer = document.getElementById('cardsColumn');
+    const cardsContainer = document.querySelector('.cardsColumn');
 
     cardsContainer.addEventListener('click', function (event) {
         if (event.target.classList.contains('remove-btn')) {

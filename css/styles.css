@@ -149,8 +149,8 @@ body {
   
 /* ------- STUDENTS ------- */
 
-  #cardsColumn {
-    height: calc(100vh - 220px);
+  .cardsColumn {
+    height: calc(100vh - 300px);
     overflow-y: scroll;
   }
 
@@ -165,6 +165,21 @@ body {
   .custom-student-card {
     height: 280px;
   }
+
+/* ------- CLASSES ------- */
+
+.card-desc {
+    height: 80px;
+}
+
+#placeholder-input {
+    height: 100%;
+    width: 100%;
+}
+
+#class-search-bar-container {
+    height: 112px;
+}
 
 /* ------- SCREENS SMALLER THAN 430 PX ------- */
 
