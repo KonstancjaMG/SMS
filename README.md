@@ -10,10 +10,10 @@ https://konstancjamg-sms.netlify.app/
 - [x] - Creation of main content styles.
 - [x] - Creation of students page.
 - [x] - Creation of students styling.
-- [ ] - Creation of teachers page.
-- [ ] - Creation of teachers styling.
-- [ ] - Creation of classes page.
-- [ ] - Creation of classes styling.
+- [x] - Creation of teachers page.
+- [x] - Creation of teachers styling.
+- [x] - Creation of classes page.
+- [x] - Creation of classes styling.
 - [ ] - Creation of grades page.
 - [ ] - Creation of grades styling.
 - [ ] - Creation of notes page.

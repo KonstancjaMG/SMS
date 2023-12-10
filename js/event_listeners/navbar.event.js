@@ -3,7 +3,7 @@ import { renderStudents } from "../pages/students/students.page.js"
 import { renderClasses } from "../pages/classes/classes.page.js";
 import { renderTeachers } from "../pages/teachers/teachers.page.js";
 import { renderGrades } from "../pages/grades/grades.js";
-import { renderNotes } from "../pages/notes.js";
+import { renderNotes } from "../pages/notes/notes.js";
 import { clearContent } from "../utils/clear.content.js";
 
 const createNavEventListeners = () =>
