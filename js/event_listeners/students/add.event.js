@@ -20,7 +20,7 @@ function getInputFields() {
     };
 }
 
-const createNewStudent = (id, name, surname, cls, dob, address, contact) => ({
+export const createNewStudent = (id, name, surname, cls, dob, address, contact) => ({
     id, name, surname, class: cls, dateOfBirth: dob, address, parentsContact: contact
 });
 
@@ -88,4 +88,4 @@ function addBorderIfInvalid(inputs, data) {
     if (!isValidContact(data.contact)) inputs.contactInput.classList.add('border-danger');
 }
 
-export {addStudent}
+export {addStudent, getStudentData}

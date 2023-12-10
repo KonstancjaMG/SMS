@@ -5,34 +5,16 @@ export function getEditForm(pStudentInfo, pClassesOptions) {
             <div class="col-12">
                 <div class="card mb-3">
                     <div class="card-header d-flex justify-content-between align-items-center fw-bold">
-                    <span>${pStudentInfo.name} ${pStudentInfo.surname}</span>
-                    <span class="text-end">Class: ${pStudentInfo.class}</span> 
-                    </div>        
-                    <div class="card-body text-start">
-              <p class="d-flex justify-content-between align-items-center">
-                <span>Date of Birth: </span>
-                <span>${pStudentInfo.dateOfBirth}</span>
-              </p>
-              <p class="d-flex justify-content-between align-items-center">
-                <span>Address: </span>
-                <span>${pStudentInfo.address}</span>
-              </p>
-              <p class="d-flex justify-content-between align-items-center">
-                <span>Contact: </span>
-                <span>${pStudentInfo.parentsContact}</span>
-              </p>
-            </div>
-                </div>
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center fw-bold">
                         <span>
-                            <input type="text" class="form-control custom-edit" id="students-edit-name" placeholder="Name">
+                            <input type="text" class="form-control custom-edit" id="students-edit-name" value="${pStudentInfo.name}">
                         </span>
                         <span class="ms-2">
-                            <input type="text" class="form-control custom-edit" id="students-edit-surname" placeholder="Surname">
+                            <input type="text" class="form-control custom-edit" id="students-edit-surname" value="${pStudentInfo.surname}">
                         </span>
                         <span class="ms-5">
                             <select class="form-control custom-edit" id="students-edit-class">
+                            <option value="${pStudentInfo.class}">${pStudentInfo.class}</option>
+                            <option disabled>-------</option>
                                 ${pClassesOptions}
                             </select>
                         </span>
@@ -40,15 +22,15 @@ export function getEditForm(pStudentInfo, pClassesOptions) {
                     <div class="card-body text-start">
                     <p class="d-flex justify-content-between align-items-center">
                       <span>Date of Birth: </span>
-                      <span><input type="text" class="form-control custom-edit" id="students-edit-dob" placeholder="YYYY-MM-DD"></span>
+                      <span><input type="text" class="form-control custom-edit" id="students-edit-dob" value="${pStudentInfo.dateOfBirth}"></span>
                     </p>
                     <p class="d-flex justify-content-between align-items-center">
-                      <span>editress: </span>
-                      <span><input type="text" class="form-control custom-edit" id="students-edit-place" placeholder="# Street, City"></span>
+                      <span>Address: </span>
+                      <span><input type="text" class="form-control custom-edit" id="students-edit-place" value="${pStudentInfo.address}"></span>
                     </p>
                     <p class="d-flex justify-content-between align-items-center">
                       <span>Contact: </span>
-                      <span><input type="text" class="form-control custom-edit" id="students-edit-contact" placeholder="XXX-XXXX"></span>
+                      <span><input type="text" class="form-control custom-edit" id="students-edit-contact" value="${pStudentInfo.parentsContact}"></span>
                     </p>
                   </div>
                     <div class="card-footer text-center">
