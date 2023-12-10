@@ -181,6 +181,12 @@ body {
     height: 112px;
 }
 
+/* ------- TEACHERS ------- */
+
+.custom-teacher-card {
+    min-height: 360px;
+}
+
 /* ------- SCREENS SMALLER THAN 430 PX ------- */
 
 @media (max-width: 580px) {
