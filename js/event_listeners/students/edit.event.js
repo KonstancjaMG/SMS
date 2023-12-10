@@ -2,6 +2,8 @@ import { renderStudentEdit } from "../../pages/edit/students/students.page.js";
 import { renderStudents } from "../../pages/students/students.page.js";
 import { getInputEditFields } from "../../pages/edit/students/students.data.js"
 import { addEditedStudentToLocalStorage } from "../../pages/edit/students/students.data.js";
+import { isValidName, isValidSurname, isValidDob, isValidPlace, isValidContact } from '../../event_listeners/students/add.event.js';
+
 
 function loadEditPage() {
     const cardsContainer = document.getElementById('contentWrapper');
@@ -14,35 +16,46 @@ function loadEditPage() {
     });
 }
 
+function addBorderIfInvalidEdit(inputs, data) {
+    if (!isValidName(data.name)) inputs.nameInput.classList.add('border-danger');
+    if (!isValidSurname(data.surname)) inputs.surnameInput.classList.add('border-danger');
+    if (!isValidDob(data.dateOfBirth)) inputs.dobInput.classList.add('border-danger');
+    if (!isValidPlace(data.address)) inputs.placeInput.classList.add('border-danger');
+    if (!isValidContact(data.parentsContact)) inputs.contactInput.classList.add('border-danger');
+}
+
+function isInputDataValidEdit(data) {
+    return isValidName(data.name) && isValidSurname(data.surname) &&
+           isValidDob(data.dateOfBirth) && isValidPlace(data.address) &&
+           isValidContact(data.parentsContact);
+}
+
 function confirmEdit(pStudentInfo) {
     const confirmBtn = document.getElementById('confirm-btn');
     confirmBtn.addEventListener('click', () => {
         const inputs = getInputEditFields();
-        console.log(pStudentInfo)
 
         const studentInfoUpdates = {
             id: pStudentInfo.id,
-            name: inputs.nameInput.value,
-            surname: inputs.surnameInput.value,
-            class: inputs.classInput.value,
-            dateOfBirth: inputs.dobInput.value,
-            address: inputs.placeInput.value,
-            parentsContact: inputs.contactInput.value
+            name: inputs.nameInput.value.trim(),
+            surname: inputs.surnameInput.value.trim(),
+            class: inputs.classInput.value.trim(),
+            dateOfBirth: inputs.dobInput.value.trim(),
+            address: inputs.placeInput.value.trim(),
+            parentsContact: inputs.contactInput.value.trim()
         };
 
-        Object.keys(studentInfoUpdates).forEach(key => {
-            if (studentInfoUpdates[key] !== '') {
+        if (isInputDataValidEdit(studentInfoUpdates)) {
+            Object.keys(studentInfoUpdates).forEach(key => {
                 pStudentInfo[key] = studentInfoUpdates[key];
-            }
-        });
-
-        addEditedStudentToLocalStorage(studentInfoUpdates);
-        renderStudents();
+            });
+            addEditedStudentToLocalStorage(studentInfoUpdates);
+            renderStudents();
+        } else {
+            addBorderIfInvalidEdit(inputs, studentInfoUpdates);
+        }
     });
 }
-
-
-
 
 function cancelEdit() {
     document.getElementById('cancel-btn').addEventListener('click', renderStudents);

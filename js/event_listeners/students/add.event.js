@@ -1,12 +1,12 @@
 import { loadFromLocalStorage, saveToLocalStorage } from "../../local_storage/local.storage.js";
 import { renderStudents } from "../../pages/students/students.page.js";
 
-const isValidName = (name) => /^[a-zA-Z ]+$/.test(name);
-const isValidSurname = (surname) => /^[A-Za-z]+([- ][A-Za-z]+)*$/.test(surname);
-const isValidClass = (cls) => /^[a-zA-Z0-9]+$/.test(cls);
-const isValidDob = (dob) => /^\d{4}-\d{2}-\d{2}$/.test(dob);
-const isValidPlace = (place) => /^[a-zA-Z0-9,.\s]+$/.test(place);
-const isValidContact = (contact) => /^\d{3}-\d{4}$/.test(contact);
+export const isValidName = (name) => /^[a-zA-Z ]+$/.test(name);
+export const isValidSurname = (surname) => /^[A-Za-z]+([- ][A-Za-z]+)*$/.test(surname);
+// export const isValidClass = (cls) => /^[a-zA-Z0-9]+$/.test(cls);
+export const isValidDob = (dob) => /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.test(dob);
+export const isValidPlace = (place) => /^[a-zA-Z0-9,.\s]+$/.test(place);
+export const isValidContact = (contact) => /^\d{3}-\d{4}$/.test(contact);
 
 function getInputFields() {
     return {
@@ -41,7 +41,7 @@ function addStudent() {
     });
 }
 
-function resetInputBorders(inputs) {
+export function resetInputBorders(inputs) {
     Object.values(inputs).forEach(input => {
         if (input.classList) input.classList.remove('border-danger');
     });
@@ -58,9 +58,10 @@ function getStudentData(inputs) {
     };
 }
 
-function isInputDataValid(data) {
-    return isValidName(data.name) && isValidSurname(data.surname) &&
-           isValidClass(data.class) && isValidDob(data.dob) &&
+export function isInputDataValid(data) {
+    return isValidName(data.name) && isValidSurname(data.surname) 
+         //  && isValidClass(data.class) 
+           && isValidDob(data.dob) &&
            isValidPlace(data.place) && isValidContact(data.contact);
 }
 
@@ -79,10 +80,9 @@ function showSuccessMessage(message) {
     addSuccess.style.display = 'block';
 }
 
-function addBorderIfInvalid(inputs, data) {
+export function addBorderIfInvalid(inputs, data) {
     if (!isValidName(data.name)) inputs.nameInput.classList.add('border-danger')
     if (!isValidSurname(data.surname)) inputs.surnameInput.classList.add('border-danger');
-    if (!isValidClass(data.cls)) inputs.classInput.classList.add('border-danger');
     if (!isValidDob(data.dob)) inputs.dobInput.classList.add('border-danger');
     if (!isValidPlace(data.place)) inputs.placeInput.classList.add('border-danger');
     if (!isValidContact(data.contact)) inputs.contactInput.classList.add('border-danger');
