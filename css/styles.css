@@ -158,7 +158,7 @@ body {
     height: 29px;
   }
 
-  #students-add-class {
+  #students-add-class, #class-add-class {
     height: 40px;
   }
 
