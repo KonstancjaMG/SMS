@@ -12,9 +12,11 @@ function getClassesCardTemplate(pClasses, pClassesLetters) {
           <div class="card custom-student-card">
             <div class="card-header d-flex justify-content-between align-items-center fw-bold">
               <span class="text-end">Class: ${cls.id}</span>
+              <span class="text-end">${cls.name}</span>
+
             </div>        
             <div class="card-body text-start">
-                ${cls.description}
+            ${cls.description}
             </div>
             <div class="d-flex justify-content-between">
               <button type="button" class="btn btn-light w-50">Teachers</button>
@@ -41,13 +43,13 @@ function getAddClassesTemplate(pClassesLetters) {
     <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
     <div class="card custom-student-card">
         <div class="card-header d-flex justify-content-between align-items-center fw-bold">
-            <span>Class:</span>
-            <div class="ms-auto">
+            <div>
                 <div class="d-flex align-items-center">
-                    <select class="form-control custom-add me-2" id="class-add-class">
+                    <select class="form-control custom-add" id="class-add-class">
                         ${pClassesLetters}
                     </select>
-                    <input type="number" min="1" value="1" class="form-control" id="class-add-number">
+                    <input type="number" min="1" value="1" class="form-control custom-add me-5" id="class-add-number">
+                    <input type="text" placeholder="Title" class="form-control custom-add-title" id="class-add-name">
                 </div>
             </div>
         </div>

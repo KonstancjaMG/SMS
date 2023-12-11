@@ -7,6 +7,7 @@ const renderClasses = () => {
   const classesList = loadClassess();
   const contentContainer = document.getElementById('contentWrapper');
   const classesLetters = getClassesLettersOptions();
+  console.log(classesList)
   contentContainer.innerHTML = `
   ${getClassSearchBarTemplate()}
   ${createSeparatorGrey()}

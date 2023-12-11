@@ -14,7 +14,7 @@ export function getHomeTemplate(pCardListContent) {
   
   export function getCardTemplate({title, stat}){
     return `
-          <div class="col-md-6 mb-4">
+          <div class="col-md-4 mb-4">
             <div class="card">
               <div class="card-header text-start fw-bold">${title}</div>
               <div class="card-body text-center">${title}: ${stat} </div>

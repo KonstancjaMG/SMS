@@ -6,6 +6,7 @@ function getClassInputs() {
     return {
     letter: document.getElementById('class-add-class'),
     number: document.getElementById('class-add-number'),
+    name: document.getElementById('class-add-name'),
     placeholder: document.getElementById('placeholder-input'),
     }
 }
@@ -14,12 +15,13 @@ function getClassData(inputs) {
     return {
         letter: inputs.letter.value,
         number: inputs.number.value,
+        name: inputs.name.value,
         placeholder: inputs.placeholder.value
     };
 }
 
-const createNewClass = (letter, number, placeholder) => ({
-    id: letter + number, description: placeholder
+const createNewClass = (letter, number, name, placeholder) => ({
+    id: letter + number, name: name, description: placeholder
 })
 
 function addNewClasstToLocalStorage(data) {
@@ -33,7 +35,7 @@ export function addClass() {
     confirmBtn.addEventListener('click', function() {
         const inputs = getClassInputs();
         const inputValues = getClassData(inputs)
-        const newClass = createNewClass(inputValues.letter, inputValues.number, inputValues.placeholder)
+        const newClass = createNewClass(inputValues.letter, inputValues.number, inputValues.name, inputValues.placeholder)
         if(!checkIfExists(newClass)) {
             addNewClasstToLocalStorage(newClass)
             renderClasses();
