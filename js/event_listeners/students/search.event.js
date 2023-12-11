@@ -15,7 +15,7 @@ function debounce(func, wait) {
 
 function searchStudents(searchType) {
     const searchInput = document.getElementById(`students-search-${searchType}`);
-    const cardsContainer = document.getElementById('cardsColumn');
+    const cardsContainer = document.querySelector('.cardsColumn');
 
     const searchFieldMap = {
         name: 'name',

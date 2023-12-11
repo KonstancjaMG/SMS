@@ -1,6 +1,6 @@
 import { getEditForm } from "../students/students.template.js";
 import { getStudentInfo } from "../students/students.data.js";
-import { getClassesOptions } from "../../classes.js";
+import { getClassesOptions } from "../../../pages/classes/classes.data.js";
 import { confirmEdit, cancelEdit } from "../../../event_listeners/students/edit.event.js";
 
 

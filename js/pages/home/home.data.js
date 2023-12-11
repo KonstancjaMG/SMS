@@ -30,7 +30,7 @@ export function getCardStatistics() {
             "stat": numberOfStudents
         },
         {
-            "title": "classes",
+            "title": "Classes",
             "stat": numberOfClasses
         },
         {
@@ -38,7 +38,7 @@ export function getCardStatistics() {
             "stat": numberOfTeachers
         },
         {
-            "title": "Average",
+            "title": "Grades",
             "stat": gradesAverage
         },
     ]

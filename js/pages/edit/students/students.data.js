@@ -1,5 +1,4 @@
 import { loadFromLocalStorage, saveToLocalStorage } from "../../../local_storage/local.storage.js";
-import {createNewStudent} from "../../../event_listeners/students/add.event.js"
 
 export function getStudentInfo(pId) {
     const studentsArray = loadFromLocalStorage('students');
