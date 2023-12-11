@@ -32,16 +32,16 @@ const classLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'
 const classes = [{id: 'A1', name: 'JavaScript 101' ,description: 'Placeholder'}, {id: 'B1', name: 'Python 101' ,description: 'Placeholder'}]
 
 const teachers = [
-  { id: 1, name: 'Leon', surname: 'Kennedy', address: '101 Raccoon St., Raccoon City', contactInfo: '555-3001', dateOfBirth: '1977-06-03', licenseId: 'LK-3001', subject: 'Math', class: "B1"},
-  { id: 2, name: 'Chris', surname: 'Redfield', address: '202 Spencer Ave., Raccoon City', contactInfo: '555-3002', dateOfBirth: '1973-05-12', licenseId: 'CR-3002', subject: 'English', class: "B1"  },
-  { id: 3, name: 'Jill', surname: 'Valentine', address: '303 Umbrella Way, Raccoon City', contactInfo: '555-3003', dateOfBirth: '1974-07-05', licenseId: 'JV-3003', subject: 'Physics', class: "B1"  },
-  { id: 4, name: 'Claire', surname: 'Redfield', address: '404 Baker St., Raccoon City', contactInfo: '555-3004', dateOfBirth: '1979-01-29', licenseId: 'CR-3004', subject: 'Chemistry', class: "B1"  },
-  { id: 5, name: 'Ada', surname: 'Wong', address: '505 Ashford Rd., Raccoon City', contactInfo: '555-3005', dateOfBirth: '1974-11-03', licenseId: 'AW-3005', subject: 'History', class: "B1" },
-  { id: 6, name: 'Albert', surname: 'Wesker', address: '606 Spencer St., Raccoon City', contactInfo: '555-3006', dateOfBirth: '1960-03-24', licenseId: 'AW-3006', subject: 'Math', class: "A1" },
-  { id: 7, name: 'Rebecca', surname: 'Chambers', address: '707 Kendo Rd., Raccoon City', contactInfo: '555-3007', dateOfBirth: '1975-11-20', licenseId: 'RC-3007', subject: 'English', class: "A1" },
-  { id: 8, name: 'Carlos', surname: 'Oliveira', address: '808 Berkin Blvd., Raccoon City', contactInfo: '555-3008', dateOfBirth: '1976-10-15', licenseId: 'CO-3008', subject: 'Physics', class: "A1" },
-  { id: 9, name: 'Barry', surname: 'Burton', address: '909 Valentine Ave., Raccoon City', contactInfo: '555-3009', dateOfBirth: '1960-08-20', licenseId: 'BB-3009', subject: 'Chemistry', class: "A1" },
-  { id: 10, name: 'Sheva', surname: 'Alomar', address: '1010 Kennedy Rd., Raccoon City', contactInfo: '555-3010', dateOfBirth: '1986-02-16', licenseId: 'SA-3010', subject: 'History', class: "A1" }
+  { id: 1, name: 'Leon', surname: 'Kennedy', address: '101 Raccoon St., Raccoon City', contactInfo: '555-3001', dateOfBirth: '1977-06-03', licenseId: 'LK-3001', class: "B1"},
+  { id: 2, name: 'Chris', surname: 'Redfield', address: '202 Spencer Ave., Raccoon City', contactInfo: '555-3002', dateOfBirth: '1973-05-12', licenseId: 'CR-3002', class: "B1"  },
+  { id: 3, name: 'Jill', surname: 'Valentine', address: '303 Umbrella Way, Raccoon City', contactInfo: '555-3003', dateOfBirth: '1974-07-05', licenseId: 'JV-3003', class: "B1"  },
+  { id: 4, name: 'Claire', surname: 'Redfield', address: '404 Baker St., Raccoon City', contactInfo: '555-3004', dateOfBirth: '1979-01-29', licenseId: 'CR-3004', class: "B1"  },
+  { id: 5, name: 'Ada', surname: 'Wong', address: '505 Ashford Rd., Raccoon City', contactInfo: '555-3005', dateOfBirth: '1974-11-03', licenseId: 'AW-3005', class: "B1" },
+  { id: 6, name: 'Albert', surname: 'Wesker', address: '606 Spencer St., Raccoon City', contactInfo: '555-3006', dateOfBirth: '1960-03-24', licenseId: 'AW-3006', class: "A1" },
+  { id: 7, name: 'Rebecca', surname: 'Chambers', address: '707 Kendo Rd., Raccoon City', contactInfo: '555-3007', dateOfBirth: '1975-11-20', licenseId: 'RC-3007', class: "A1" },
+  { id: 8, name: 'Carlos', surname: 'Oliveira', address: '808 Berkin Blvd., Raccoon City', contactInfo: '555-3008', dateOfBirth: '1976-10-15', licenseId: 'CO-3008', class: "A1" },
+  { id: 9, name: 'Barry', surname: 'Burton', address: '909 Valentine Ave., Raccoon City', contactInfo: '555-3009', dateOfBirth: '1960-08-20', licenseId: 'BB-3009', class: "A1" },
+  { id: 10, name: 'Sheva', surname: 'Alomar', address: '1010 Kennedy Rd., Raccoon City', contactInfo: '555-3010', dateOfBirth: '1986-02-16', licenseId: 'SA-3010', class: "A1" }
 ];
 
 

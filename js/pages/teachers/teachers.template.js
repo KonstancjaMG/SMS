@@ -95,8 +95,8 @@ export function getTeachersSearchBar() {
           <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4" id="add-container">
             <div class="card">
               <div class="card-header d-flex justify-content-between align-items-center fw-bold">
-                <span><input type="text" class="form-control custom-add" id="teachers-add-name" placeholder="Name"></span>
-                <span class="ms-2"><input type="text" class="form-control custom-add" id="teachers-add-surname" placeholder="Surname"></span>
+                <span><input type="text" class="form-control" id="teachers-add-name" placeholder="Name"></span>
+                <span class="ms-2"><input type="text" class="form-control" id="teachers-add-surname" placeholder="Surname"></span>
                 <span class="ms-5">
                     <select class="form-control custom-add" id="teachers-add-class">
                         ${pClassesOptions}
@@ -106,23 +106,23 @@ export function getTeachersSearchBar() {
               <div class="card-body text-start">
                 <p class="d-flex justify-content-between align-items-center">
                   <span>Date of Birth: </span>
-                  <span><input type="text" class="form-control custom-add" id="teachers-add-dob" placeholder="YYYY-MM-DD"></span>
+                  <span><input type="text" class="form-control" id="teachers-add-dob" placeholder="YYYY-MM-DD"></span>
                 </p>
                 <p class="d-flex justify-content-between align-items-center">
                   <span>Address: </span>
-                  <span><input type="text" class="form-control custom-add" id="teachers-add-place" placeholder="# Street, City"></span>
+                  <span><input type="text" class="form-control" id="teachers-add-place" placeholder="# Street, City"></span>
                 </p>
                 <p class="d-flex justify-content-between align-items-center">
                   <span>Contact: </span>
-                  <span><input type="text" class="form-control custom-add" id="teachers-add-contact" placeholder="XXX-XXXX"></span>
+                  <span><input type="text" class="form-control" id="teachers-add-contact" placeholder="XXX-XXXX"></span>
                 </p>
                 <p class="d-flex justify-content-between align-items-center">
                   <span>Contact: </span>
-                  <span><input type="text" class="form-control custom-add" id="teachers-add-licence" placeholder="XX-XXXX"></span>
+                  <span><input type="text" class="form-control" id="teachers-add-licence" placeholder="XX-XXXX"></span>
                 </p>
                 <p class="d-flex justify-content-between align-items-center">
                   <span>Contact: </span>
-                  <span><input type="text" class="form-control custom-add" id="teachers-add-subject" placeholder="Subject"></span>
+                  <span><input type="text" class="form-control" id="teachers-add-subject" placeholder="Subject"></span>
                 </p>
               </div>
               <div class="card-footer text-end">

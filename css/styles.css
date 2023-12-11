@@ -168,7 +168,11 @@ body {
   }
 
   .custom-student-card {
-    height: 280px;
+    height: 303px;
+  }
+
+  .custom-add-student-class {
+    width: 40px;
   }
 
 /* ------- CLASSES ------- */
@@ -189,7 +193,7 @@ body {
 /* ------- TEACHERS ------- */
 
 .custom-teacher-card {
-    min-height: 360px;
+    min-height: 415px;
 }
 
 /* ------- SCREENS SMALLER THAN 430 PX ------- */

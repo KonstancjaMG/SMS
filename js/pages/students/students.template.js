@@ -76,10 +76,10 @@ function createAddCard(pClassesOptions) {
         <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4" id="add-container">
           <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center fw-bold">
-              <span><input type="text" class="form-control custom-add" id="students-add-name" placeholder="Name"></span>
-              <span class="ms-2"><input type="text" class="form-control custom-add" id="students-add-surname" placeholder="Surname"></span>
+              <span><input type="text" class="form-control custom-add-student" id="students-add-name" placeholder="Name"></span>
+              <span class="ms-2"><input type="text" class="form-control custom-add-student" id="students-add-surname" placeholder="Surname"></span>
               <span class="ms-5">
-                  <select class="form-control custom-add" id="students-add-class">
+                  <select class="form-control custom-add-student-class" id="students-add-class">
                       ${pClassesOptions}
                   </select>
               </span>
@@ -87,15 +87,15 @@ function createAddCard(pClassesOptions) {
             <div class="card-body text-start">
               <p class="d-flex justify-content-between align-items-center">
                 <span>Date of Birth: </span>
-                <span><input type="text" class="form-control custom-add" id="students-add-dob" placeholder="YYYY-MM-DD"></span>
+                <span><input type="text" class="form-control custom-add-student" id="students-add-dob" placeholder="YYYY-MM-DD"></span>
               </p>
               <p class="d-flex justify-content-between align-items-center">
                 <span>Address: </span>
-                <span><input type="text" class="form-control custom-add" id="students-add-place" placeholder="# Street, City"></span>
+                <span><input type="text" class="form-control custom-add-student" id="students-add-place" placeholder="# Street, City"></span>
               </p>
               <p class="d-flex justify-content-between align-items-center">
                 <span>Contact: </span>
-                <span><input type="text" class="form-control custom-add" id="students-add-contact" placeholder="XXX-XXXX"></span>
+                <span><input type="text" class="form-control custom-add-student" id="students-add-contact" placeholder="XXX-XXXX"></span>
               </p>
             </div>
             <div class="card-footer text-end">
