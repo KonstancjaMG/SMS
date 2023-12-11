@@ -2,9 +2,6 @@ const links = [
   { name: "Students", url: "students", status: '' },
   { name: "Classes", url: "classes", status: '' },
   { name: "Teachers", url: "teachers", status: '' },
-  { name: "Grades", url: "grades", status: '' },
-  { name: "Notes", url: "notes", status: '' },
-  { name: "Login", url: "login", status: 'inactive' },
 ];
 
 const students = [
@@ -32,7 +29,7 @@ const students = [
 
 const classLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
-const classes = [{id: 'A1', description: 'Placeholder'}, {id: 'B1', description: 'Placeholder'}, {id: 'C1', description: 'Placeholder'}, {id: 'D1', description: 'Placeholder'}, {id: 'E1', description: 'Placeholder'}, {id: 'F1', description: 'Placeholder'}]
+const classes = [{id: 'A1', name: 'JavaScript 101' ,description: 'Placeholder'}, {id: 'B1', name: 'Python 101' ,description: 'Placeholder'}]
 
 const teachers = [
   { id: 1, name: 'Leon', surname: 'Kennedy', address: '101 Raccoon St., Raccoon City', contactInfo: '555-3001', dateOfBirth: '1977-06-03', licenseId: 'LK-3001', subject: 'Math', class: "B1"},
@@ -48,37 +45,4 @@ const teachers = [
 ];
 
 
-const grades = [
-  { studentId: 1, Math: 5, English: 4, Physics: 3, Chemistry: 4, History: 3 },
-  { studentId: 2, Math: 5, English: 4, Physics: 4, Chemistry: 3, History: 4 },
-  { studentId: 3, Math: 4, English: 5, Physics: 4, Chemistry: 5, History: 5 },
-  { studentId: 4, Math: 3, English: 3, Physics: 5, Chemistry: 2, History: 4 },
-  { studentId: 5, Math: 4, English: 4, Physics: 3, Chemistry: 4, History: 3 },
-  { studentId: 6, Math: 5, English: 5, Physics: 5, Chemistry: 5, History: 5 },
-  { studentId: 7, Math: 3, English: 4, Physics: 4, Chemistry: 3, History: 2 },
-  { studentId: 8, Math: 2, English: 3, Physics: 5, Chemistry: 4, History: 3 },
-  { studentId: 9, Math: 4, English: 2, Physics: 3, Chemistry: 3, History: 4 },
-  { studentId: 10, Math: 5, English: 3, Physics: 4, Chemistry: 4, History: 3 }
-];
-
-const notes = [
-  {
-    "date": "December 5, 2023",
-    "subject": "Student Progress",
-    "note": "Emily has shown remarkable improvement in her algebra skills. Her latest test score was 85%, a significant increase from her previous score of 65%. Recommended action: Praise her progress and encourage continued practice."
-  },
-  {
-    "date": "December 5, 2023",
-    "subject": "Winter Break Schedule",
-    "note": "Reminder to all staff - the school will be closed for winter break from December 20, 2023, to January 3, 2024. Please ensure all lesson plans are updated accordingly and all grades are submitted by December 18, 2023."
-  },
-  {
-    "date": "December 5, 2023",
-    "subject": "Meeting Preparation",
-    "note": "Prepare progress reports and talking points for the upcoming parent-teacher meetings on December 10, 2023. Focus on discussing strategies for student engagement and individualized learning plans."
-  }
-]
-
-
-
-export {links, students, classes, teachers, grades, notes, classLetters}
+export {links, students, classes, teachers, classLetters}

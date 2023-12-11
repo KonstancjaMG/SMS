@@ -155,7 +155,12 @@ body {
   }
 
   .custom-add {
-    height: 29px;
+    height: 40px;
+    width: 55px;
+  }
+
+  .custom-add-title {
+    width: 140px;
   }
 
   #students-add-class, #class-add-class {

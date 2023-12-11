@@ -1,18 +1,18 @@
-export function getClassesEditTemplate(pClassesLetters, currentLetter, currentNumber, currentDescription) {
+export function getClassesEditTemplate(pClassesLetters, currentLetter, currentNumber, currentName, currentDescription) {
     return `
     <div id="cardsColumn" class="container-fluid vh-100 d-flex align-items-center justify-content-center">
     <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
     <div class="card custom-student-card">
         <div class="card-header d-flex justify-content-between align-items-center fw-bold">
-            <span>Class:</span>
-            <div class="ms-auto">
+            <div>
                 <div class="d-flex align-items-center">
-                    <select class="form-control custom-add me-2" id="students-add-class">
+                    <select class="form-control custom-add" id="class-edit-letter">
                     <option value="${currentLetter}">${currentLetter}</option>
                     <option disabled>-------</option>
                         ${pClassesLetters}
                     </select>
-                    <input type="number" min="1" value="${currentNumber}" class="form-control">
+                    <input type="number" min="1" value="${currentNumber}" class="form-control custom-add  me-5" id="class-edit-number">
+                    <input type="text" value="${currentName}" class="form-control custom-add-name" id="class-edit-name">
                 </div>
             </div>
         </div>
