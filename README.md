@@ -30,8 +30,6 @@ https://konstancjamg-sms.netlify.app/
 - [x] - Search classes.
 - [x] - Edit classes.
 
-- [ ] - Adjustements for different viewports.
-
 ## Features - Navbar
 * Responsive Navigation Bar
 * Elegant Design with Custom Separator

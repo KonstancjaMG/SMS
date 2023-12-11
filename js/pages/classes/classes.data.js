@@ -17,3 +17,8 @@ export function getClassesOptions() {
     const classOptions = classesArray.map(cls => `<option value="${cls.id}">${cls.id}</option>`).join('');
     return classOptions
   }
+
+export  function getClassNameById(classId, classesArray) {
+    const classObj = classesArray.find(cls => cls.id === classId);
+    return classObj ? classObj.name : 'Unknown Class';
+}

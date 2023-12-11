@@ -1,6 +1,8 @@
-export function getTeachersPageTemplate(pTeachersArray, pClassesOptions) {
+import { getClassNameById } from "../classes/classes.data.js";
+
+export function getTeachersPageTemplate(pTeachersArray, pClassesOptions, pClasses) {
     return `<div class="ps-5 pe-5 border cardsColumn">
-    ${getTeachersCards(pTeachersArray, pClassesOptions)}
+    ${getTeachersCards(pTeachersArray, pClassesOptions, pClasses)}
     </div>`
 }
 
@@ -33,7 +35,7 @@ export function getTeachersSearchBar() {
             <input type="text" class="form-control" id="teacher-search-contact" placeholder="Contact Nr.">
         </div>
         <div class="col-md-3 col-sm-3">
-            <input type="text" class="form-control" id="teacher-search-subject" placeholder="Subject">
+            <input type="text" class="form-control" id="teacher-search-subject" placeholder="Module">
         </div>
     </div>
   </div>
@@ -41,14 +43,15 @@ export function getTeachersSearchBar() {
     `
   }
   
- function getTeachersCards(pTeachersArray, pClassesOptions) {
+  function getTeachersCards(pTeachersArray, pClassesOptions, pClasses) {
     const cards = pTeachersArray.map(teacher => {
+        const className = getClassNameById(teacher.class, pClasses);
         return `
           <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
             <div class="custom-teacher-card card">
               <div class="card-header d-flex justify-content-between align-items-center fw-bold">
                 <span>${teacher.name} ${teacher.surname}</span>
-                <span class="text-end">Class: ${teacher.class}</span>
+                <span class="text-end">Class: ${teacher.class}</span> <!-- Display class name -->
               </div>        
               <div class="card-body text-start">
                 <p class="d-flex justify-content-between align-items-center">
@@ -68,19 +71,19 @@ export function getTeachersSearchBar() {
                   <span>${teacher.licenseId}</span>
                 </p>
                 <p class="d-flex justify-content-between align-items-center">
-                  <span>Subject: </span>
-                  <span>${teacher.subject}</span>
+                  <span>Module: </span>
+                  <span>${className}</span> <!-- Display class name as Module -->
                 </p>
               </div>
               <div class="card-footer text-end">
-              <div class="row">
-              <div class="col">
-              <button type="button" class="btn btn-light w-100 edit-btn" data-edit-teacher-id="${teacher.id}"><i class="fa-solid fa-pen"></i></button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-light w-100 remove-btn" data-teacher-id="${teacher.id}"><i class="fa-solid fa-trash"></i></button>
-              </div>
-            </div>
+                <div class="row">
+                  <div class="col">
+                    <button type="button" class="btn btn-light w-100 edit-btn" data-edit-teacher-id="${teacher.id}"><i class="fa-solid fa-pen"></i></button>
+                  </div>
+                  <div class="col">
+                    <button type="button" class="btn btn-light w-100 remove-btn" data-teacher-id="${teacher.id}"><i class="fa-solid fa-trash"></i></button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -88,7 +91,8 @@ export function getTeachersSearchBar() {
       }).join('');
     
     return `<div class="row mb-5 mt-4">${getTeachersAddCard(pClassesOptions)} ${cards}</div>`;
-  }
+}
+
   
   function getTeachersAddCard(pClassesOptions) {
     return `
@@ -117,12 +121,12 @@ export function getTeachersSearchBar() {
                   <span><input type="text" class="form-control" id="teachers-add-contact" placeholder="XXX-XXXX"></span>
                 </p>
                 <p class="d-flex justify-content-between align-items-center">
-                  <span>Contact: </span>
+                  <span>Licence: </span>
                   <span><input type="text" class="form-control" id="teachers-add-licence" placeholder="XX-XXXX"></span>
                 </p>
                 <p class="d-flex justify-content-between align-items-center">
-                  <span>Contact: </span>
-                  <span><input type="text" class="form-control" id="teachers-add-subject" placeholder="Subject"></span>
+                  <span>Module: </span>
+                  <span><input type="text" class="form-control" id="teachers-add-subject" placeholder="Class Name"></span>
                 </p>
               </div>
               <div class="card-footer text-end">

@@ -73,14 +73,17 @@ function getAddClassesTemplate(pClassesLetters) {
 export function getClassSearchBarTemplate() {
     return `
     <div class="container small-search-bar-container">
-    <div class="row justify-content-center mt-3 mb-3">
-        <div class="col-md-4 d-flex justify-content-center">
-            <input type="text" class="form-control" id="class-search-letter" placeholder="Letter">
-        </div>
-        <div class="col-md-4 d-flex justify-content-center">
-            <input type="text" class="form-control" id="class-search-number" placeholder="Number">
+        <div class="row justify-content-center mt-3 mb-3">
+            <div class="col-md-4 d-flex justify-content-center">
+                <input type="text" class="form-control" id="class-search-letter" placeholder="Letter">
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <input type="text" class="form-control" id="class-search-number" placeholder="Number">
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <input type="text" class="form-control" id="class-search-title" placeholder="Title">
+            </div>
         </div>
     </div>
-</div>
-    `
-  }
+    `;
+}
