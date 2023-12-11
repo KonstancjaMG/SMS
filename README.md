@@ -14,10 +14,6 @@ https://konstancjamg-sms.netlify.app/
 - [x] - Creation of teachers styling.
 - [x] - Creation of classes page.
 - [x] - Creation of classes styling.
-- [ ] - Creation of grades page.
-- [ ] - Creation of grades styling.
-- [ ] - Creation of notes page.
-- [ ] - Creation of notes styling.
 - [ ] - Creation of footer structure.
 - [ ] - Creation of footer styles.
 - [x] - Add of localStorage.
@@ -29,18 +25,10 @@ https://konstancjamg-sms.netlify.app/
 - [ ] - Remove teachers.
 - [ ] - Search teachers.
 - [ ] - Edit teachers.
-- [ ] - Add classes.
-- [ ] - Remove classes.
-- [ ] - Search classes.
-- [ ] - Edit classes.
-- [ ] - Add grades.
-- [ ] - Remove grades.
-- [ ] - Search grades.
-- [ ] - Edit grades.
-- [ ] - Add notes.
-- [ ] - Search notes.
-- [ ] - Remove notes.
-- [ ] - Edit notes.
+- [x] - Add classes.
+- [x] - Remove classes.
+- [x] - Search classes.
+- [x] - Edit classes.
 
 - [ ] - Adjustements for different viewports.
 
