@@ -23,12 +23,12 @@ export function getClassesEditTemplate(pClassesLetters, currentLetter, currentNu
             <div class="row">
                 <div class="col">
                     <button type="button" class="btn btn-light w-100 confirm-btn" data-confirm-class-id="">
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-check" data-confirm-class-id=""></i>
                     </button>
                     </div>
                     <div class="col">
                     <button type="button" class="btn btn-light w-100 cancel-btn" data-confirm-class-id="">
-                        <i class="fa-solid fa-x"></i>
+                        <i class="fa-solid fa-x" data-confirm-class-id=""></i>
                     </button>
                 </div>
             </div>

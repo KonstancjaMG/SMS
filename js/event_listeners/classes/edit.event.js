@@ -9,7 +9,7 @@ export function renderEditPage() {
             const classId = event.target.getAttribute('data-edit-class-id');
             const classInfo = getExistingClassInfo(classId);
             createClassesEditPage(classInfo);
-            cancelClassEdit();``
+            cancelClassEdit();
             confirmClassEdit(classId)
         });
     });
