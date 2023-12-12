@@ -6,7 +6,6 @@ import { confirmEdit, cancelEdit } from "../../../event_listeners/students/edit.
 
 export function renderStudentEdit(pContainer, pStudentId) {
     const studentInfo = getStudentInfo(pStudentId);
-    console.log(studentInfo)
     const classesOptions = getClassesOptions();
 
     const editFormHtml = getEditForm(studentInfo, classesOptions); 

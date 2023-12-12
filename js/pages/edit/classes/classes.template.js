@@ -1,6 +1,6 @@
 export function getClassesEditTemplate(pClassesLetters, currentLetter, currentNumber, currentName, currentDescription) {
     return `
-    <div id="cardsColumn" class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+    <div id="cardsColumn" class="container-fluid calc d-flex align-items-center justify-content-center">
     <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
     <div class="card custom-student-card">
         <div class="card-header d-flex justify-content-between align-items-center fw-bold">

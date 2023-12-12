@@ -7,10 +7,7 @@ export function getClassInfo(pId) {
 
     if (classInfo) {
         return classInfo;
-    } else {
-        console.log(`No Class found with id ${pId}`);
-        return null;
-    }
+    } 
 }
 
 export function getExistingClassInfo(pId) {

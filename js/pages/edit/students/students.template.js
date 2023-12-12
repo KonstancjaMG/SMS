@@ -1,6 +1,6 @@
 export function getEditForm(pStudentInfo, pClassesOptions) {
     return `
-    <div id="cardsColumn" class="container-fluid vh-100 d-flex align-items-center justify-content-center">
+    <div id="cardsColumn" class="container-fluid calc d-flex align-items-center justify-content-center">
         <div class="row">
             <div class="col-12">
                 <div class="card mb-3">

@@ -40,8 +40,6 @@ export function addClass() {
             addNewClasstToLocalStorage(newClass)
             renderClasses();
             addStatusSuccess()
-        } else {
-            console.log('Already Exists!')
         }
     })
 }
