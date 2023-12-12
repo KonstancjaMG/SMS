@@ -24,7 +24,7 @@ https://konstancjamg-sms.netlify.app/
 - [x] - Add teachers.
 - [x] - Remove teachers.
 - [x] - Search teachers.
-- [ ] - Edit teachers.
+- [x] - Edit teachers.
 - [x] - Add classes.
 - [x] - Remove classes.
 - [x] - Search classes.

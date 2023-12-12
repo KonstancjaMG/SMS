@@ -19,8 +19,8 @@ export function getClassesCardTemplate(pClasses, pClassesLetters) {
             ${cls.description}
             </div>
             <div class="d-flex justify-content-between">
-              <button type="button" class="btn btn-light w-50">Teachers</button>
-              <button type="button" class="btn btn-light w-50">Students</button>
+              <button type="button" class="btn btn-light w-50 show-teachers" data-show-teachers-id="${cls.id}">Teachers</button>
+              <button type="button" class="btn btn-light w-50 show-students" data-show-students-id="${cls.id}">Students</button>
                 </div>
             <div class="card-footer text-end">
             <div class="row">
