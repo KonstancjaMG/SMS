@@ -67,7 +67,7 @@ function searchTeachers() {
                 if (searchText === '') return true;
                 let field = teacher[searchFieldMap[key]];
                 if (key === 'module' && teacher.class) {
-                    field = classMap[teacher.class]; // Use class name for 'module' field
+                    field = classMap[teacher.class];
                 }
                 return field && field.toString().toLowerCase().includes(searchText);
             });
