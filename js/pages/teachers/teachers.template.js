@@ -2,6 +2,7 @@ import { getClassNameById } from "../classes/classes.data.js";
 
 export function getTeachersPageTemplate(pTeachersArray, pClassesOptions, pClasses) {
     return `<div class="ps-5 pe-5 border cardsColumn">
+    <div id="add-status" class="text-center mt-2" style="display:none"></div>
     ${getTeachersCards(pTeachersArray, pClassesOptions, pClasses)}
     </div>`
 }
@@ -43,7 +44,7 @@ export function getTeachersSearchBar() {
     `
   }
   
-  function getTeachersCards(pTeachersArray, pClassesOptions, pClasses) {
+ export function getTeachersCards(pTeachersArray, pClassesOptions, pClasses) {
     const cards = pTeachersArray.map(teacher => {
         const className = getClassNameById(teacher.class, pClasses);
         return `
@@ -123,10 +124,6 @@ export function getTeachersSearchBar() {
                 <p class="d-flex justify-content-between align-items-center">
                   <span>Licence: </span>
                   <span><input type="text" class="form-control" id="teachers-add-licence" placeholder="XX-XXXX"></span>
-                </p>
-                <p class="d-flex justify-content-between align-items-center">
-                  <span>Module: </span>
-                  <span><input type="text" class="form-control" id="teachers-add-subject" placeholder="Class Name"></span>
                 </p>
               </div>
               <div class="card-footer text-end">

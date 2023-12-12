@@ -73,7 +73,7 @@ function addNewStudentToLocalStorage(data) {
     saveToLocalStorage('students', studentsArray);
 }
 
-function showSuccessMessage(message) {
+export function showSuccessMessage(message) {
     const addSuccess = document.getElementById('add-status');
     addSuccess.innerHTML = message;
     addSuccess.classList.add('text-success');

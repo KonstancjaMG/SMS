@@ -3,6 +3,7 @@ import { getTeachersPageTemplate, getTeachersSearchBar } from "./teachers.templa
 import { createSeparatorGrey } from "../../utils/spacer.js";
 import {getClassesOptions, loadClassess} from "../classes/classes.data.js"
 import { loadTeachers } from "./teachers.data.js";
+import { createTeachersEventListeners } from "../../event_listeners/teachers/create.event.js";
 
 const renderTeachers = () => {
   const classOptions = getClassesOptions();
@@ -12,11 +13,12 @@ const renderTeachers = () => {
     const teachersPage = getTeachersPageTemplate(teachers ,classOptions, classes);
     const searchBar = getTeachersSearchBar();
     const separator = createSeparatorGrey();
-    contentContainer.innerHTML += `
+    contentContainer.innerHTML = `
       ${searchBar}
       ${separator}
       ${teachersPage}
     `;
+    createTeachersEventListeners();
   };
   
   export {renderTeachers};
