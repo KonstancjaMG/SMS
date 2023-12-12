@@ -10,7 +10,6 @@ export function renderEditTeacherPage() {
             const teacherId = event.target.getAttribute('data-edit-teacher-id');
             const teacherInfo = getExistingTeacherInfo(parseInt(teacherId, 10));
             const getContainer = getContentContainer();
-            console.log(teacherInfo)
             getContainer.innerHTML = getTeachersCardEdit(teacherInfo);
             cancelTeacherEdit();
             confirmTeacherEdit(teacherId)
@@ -22,7 +21,6 @@ function confirmTeacherEdit(pId) {
     const confirmBtn = document.querySelector('.confirm-btn');
     confirmBtn.addEventListener('click', function() {
         const inputs = getTeachersEditFields(pId);
-        console.log(inputs)
         const updatedTeacher = {
             id: parseInt(pId, 10),
             name: inputs.nameEdited,

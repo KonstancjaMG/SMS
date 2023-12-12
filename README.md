@@ -14,8 +14,8 @@ https://konstancjamg-sms.netlify.app/
 - [x] - Creation of teachers styling.
 - [x] - Creation of classes page.
 - [x] - Creation of classes styling.
-- [ ] - Creation of footer structure.
-- [ ] - Creation of footer styles.
+- [x] - Creation of footer structure.
+- [x] - Creation of footer styles.
 - [x] - Add of localStorage.
 - [x] - Add students.
 - [x] - Remove students.
@@ -38,6 +38,9 @@ https://konstancjamg-sms.netlify.app/
 * Utilization of Bootstrap framework
 * Dynamic student search
 * Add/Edit/Remove students functionalities
+* Add/Edit/Remove students functionalities
+* Add/Edit/Remove classes functionalities
+* Show students/teachers assigned to class
 
 ## Development - Navbar
 This project uses JavaScript with the Bootstrap framework.
@@ -54,8 +57,8 @@ This project uses JavaScript with the Bootstrap framework.
 
 ## Developments - Content
 
-The students pages dynamically creates cards with students data. The leftmost card is the add student functionality and contains validation for input. Each student card offers a remove option (possible change: modal to confirm the deletion), and will contain an edit option (modal).
-The top of the page contains the dynamically updated search functions.
+The students pages dynamically creates cards with students data. The leftmost card is the add student functionality and contains validation for input. Each student card offers remove and edit options.
+The top of the page contains a dynamically updated search functions.
 
 ## File Structure
 
@@ -67,24 +70,53 @@ SMS/
     * data.js # Data file, containing constants
     * main.js # The main JavaScript entry point
     * navigation.js # Script for navigation-related functionality
+    * footer.js # Footer render
     * render.js # Script for rendering UI components
         * /event_listeners
+            * /classes
+                * add.event.js # Add new classes event listeners
+                * create.event.js # Renders all classes related event listeners
+                * edit.event.js # Edit classes event listeners
+                * remove.event.js # Remove classes event listeners
+                * search.event.js # Search classes event listeners
+                * show.students.js # Show assignes students
+                * show.teachers.js # Show assigned teachers
             * /students
                 * add.event.js # Add new student event listeners
                 * create.event.js # Renders all students related event listeners
                 * edit.event.js # Edit student event listeners
                 * remove.event.js # Remove student event listeners
                 * search.event.js # Search student event listeners
+            * /teachers
+                * add.event.js # Add new teachers event listeners
+                * create.event.js # Renders all teachers related event listeners
+                * edit.event.js # Edit teachers event listeners
+                * remove.event.js # Remove teachers event listeners
+                * search.event.js # Search teachers event listeners
             * content_event_listeners.js # All event listeners for main page
             * navbar_event_listeners.js # All event listeners for navbar
         * /local_storage
             * local_storage_upload.js # Script handling load/add/remove from localStorage
         * /pages
+            * /classes
+                * classes.data.js # Data retrieval and manipulation for classes page
+                * classes.page.js # Render of the classes page
+                * classes.template.js # HTML template for the classes page
+                * show.students.template.js # Show assignes students template
+                * show.teachers.template.js # Show assigned teachers template
             * /edit
+                * /classes
+                    * classes.data.js # Data retrieval and manipulation for classes edit page
+                    * classes.page.js # Render of the classes edit page
+                    * classes.template.js  # HTML template for classes edit page
                 * /students
                     * students.data.js # Data retrieval and manipulation for students edit page
                     * students.page.js # Render of the students edit page
                     * students.template.js  # HTML template for students edit page
+                * /teachers
+                    * teachers.data.js # Data retrieval and manipulation for teachers edit page
+                    * teachers.page.js # Render of the teachers edit page
+                    * teachers.template.js  # HTML template for teachers edit page    
             * /home
                 * home.data.js # Data retrieval and manipulation for home page
                 * home.page.js  # Render of the home page
@@ -93,10 +125,10 @@ SMS/
                 * students.data.js # Data retrieval and manipulation for students page
                 * students.page.js # Render of the students page
                 * students.template.js # HTML template for the students page
-            * classes.js
-            * grades.js
-            * teachers.js
-            * notes.js 
+            * teachers
+                * teachers.data.js # Data retrieval and manipulation for teachers page
+                * teachers.page.js # Render of the teachers page
+                * teachers.template.js # HTML template for the teachers page
         * /utils
             * clear_content.js # Script to clear content of the page
             * spacer.js # Script to create visual separators

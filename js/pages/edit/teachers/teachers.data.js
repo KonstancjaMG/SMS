@@ -6,9 +6,6 @@ export function getTeacherInfo(pId) {
 
     if (teacherInfo) {
         return teacherInfo;
-    } else {
-        console.log(`No Teacher found with id ${pId}`);
-        return null;
     }
 }
 
